@@ -1,0 +1,61 @@
+Equipment: Atmospheric Pressure Storage Tanks
+- Maximum height of 20m or 1.5 times the diameter of the tank, whichever is smaller
+- Maximum storage capacity for hydrocarbon liquids: 120,000 m³ for floating roof tanks and 60,000 m³ for cone roof tanks
+- Floating roof tanks with diameter ≤ 12m or > 60m shall be of double deck construction
+- Floating roof tanks with diameter > 12m but ≤ 60m can be of single deck annular pontoon type construction with or without buoys
+- Floating roof shall be capable of holding its design capacity when in its highest position
+- Floating roof shall be of low deck (minimum vapour space) type
+- Tanks shall be designed to store a liquid of specific gravity of 0.9
+- Low temperature tanks shall be designed in accordance with API 620 Appendix Q or Appendix R
+- Normal capacity for fixed roof tank shall be the volume of the cylindrical shell
+- Stored capacity for fixed roof tank shall be equal to nominal capacity minus free board volume (equivalent to 500 mm shell height)
+- Nominal capacity (also stored capacity) for floating roof tank shall be the volume of the cylindrical shell minus free board volume (equivalent to 1500 mm shell height)
+- Anchorage shall be provided if the ratio of resisting moment to overturning moment is less than 1.5
+- For tanks with diameters exceeding 60 m, the shape factor shall be agreed between contractors and the buyer, but shall not be less than 0.7
+- A corrosion allowance of 2 mm shall be applied to the smallest cross-section of the anchor bolts or on the thickness of the anchor straps
+- Roof plates shall be laid for complete rainwater runoff with the lower edge of plates in any course overlapping the adjacent lower course
+- Applicable Indian Standard for wind loads: IS 875 (Part 3)
+- Terrain Category = 2, Group = B
+- K1 = 1.08, K2 = 1.1, K3 = 1.0
+- Wind Speed = 50 m/s
+- Shape Factor = 0.7
+- External tank bottom cathodic corrosion protection shall be provided for all carbon steel flat bottom tanks supported on soil or bitumen/sand mix
+- Tanks to be coated internally shall also be protected internally by cathodic protection
+- Tanks shall be calibrated in accordance with API standards MPMS-2.2A & MPMS-2.2B and Indian Standards IS 2007 and IS 2008
+- Austenitic stainless steel tanks shall be designed in accordance with Appendix S of API 650
+- For insulated tanks, the standard projections specified for nozzles and manways shall be increased to allow removal of bolts without the need to remove shell insulation
+- Wherever plates are used for flanges, the plates greater than 20 mm shall be ultrasonically tested
+- When shell plates with openings require post weld heat treatment, the openings shall be grouped in as few plates as possible
+- Manholes shall have a minimum inside diameter of 24 inches
+- Nozzle flanges above 24" NB (except manways) shall be as per ANSI B16.47 Series – B Type
+- The minimum distance from the bottom of the tank to the centre line of any nozzle or manway shall be as per API Standard 650 for regular nozzles – table 5.6a
+- Minimum two grounding lugs consisting of a 75 x 75 x 9mm thick, TP 304 S.S. plate with 16mm diameter hole, shall be provided near the tank bottom
+- Reinforcement or bearing plates shall be added to the tank bottom under all concentrated loads
+- Wear plates 6 mm (0.25 inch) thick shall be installed under pipes discharging against the tank bottom
+- The minimum number of roof manholes for cone roof tanks: 1 - 20 inch I.D. for tanks with diameter ≤ 30 m (100 ft) and 2 - 20 inch I.D. spaced 180 degrees apart for tanks with diameter > 30 m (100 ft)
+- Flange bolt holes for roof nozzles shall straddle the 0-180 degree tank centre line with 0° at plant north
+- Sumps or any under-bottom fittings provided in tanks equipped with annular plates shall be installed with a minimum clearance of 305 mm (12 inch) plus the width of annular plate between the shell and the edge of the sump or fitting
+- Drain nozzles shall be located near a shell manway to facilitate cleaning of sumps
+- All tanks shall be provided with access to the roof
+- Tanks over 7.3m high shall be provided with a circumferential stairway with an angle of approximately 45 degrees
+- A 900mm wide top landing shall be provided at the top of the tank shell for fixed roof tanks and open top tanks without floating roofs
+- A Gauger's platform with hand railing shall be provided from the top of the stairway to the roof ladder on open top tanks with floating roofs
+- Tanks 7.3m high or less shall be provided with a vertical ladder
+- Handrail shall be provided at the edge of the tank roof on fixed roof tanks along the entire roof perimeter
+- Treads and landing shall be made of non-slip, open type welded bar grating
+- The minimum height of toeboards shall be 100 mm
+- Platforms, including stairways, ladders, handrails and grating shall be hot dipped galvanised
+- Corrosion allowance for the roof plate and structure shall be as stated in the tank data sheet
+- Roofs which are to be internally coated shall be seal welded inside
+- Anchorage shall be provided if the ratio of resisting moment to overturning moment is less than 1.5
+- Corrosion allowance for anchor bolts shall be a minimum of 6mm (0.25 inch)
+- Anchor chairs shall be located to clear nozzles, manways, vertical shell seams and exterior shell accessories
+- Austenitic Stainless Steel tanks shall be hydrotested with water containing not more than 30 ppm of chlorides
+- For Carbon steel materials, the test water shall be potable quality with chloride content less than 250 ppm
+- Tanks shall be provided with a directional water spray cooling system designed in accordance with NFPA 15
+- Tanks shall be provided with a fire fighting foam system designed in accordance with NFPA 11
+- Tank foundations in service other than water shall be designed to include a subgrade protection membrane with facility for leak detection and collection in accordance with API 650 Appendix I
+- Pan-type floating roofs are not acceptable for open floating roof tanks
+- Roofs shall be designed to resist all effects of the wind loading
+- Roofs shall be designed and erected to eliminate the accumulation of excessive amounts of standing water when the appropriate drains are open
+- Roofs shall be of the contact type

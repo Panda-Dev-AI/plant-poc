@@ -1,0 +1,15 @@
+Inputs Required from Client
+
+- Basic configuration
+- Service data
+- Design requirements
+- All other applicable loads
+
+Additional Requirements from Client
+
+- The specific requirements for individual tanks as given in the Tank Data Sheets
+- Compliance with local, state, and national regulations
+- Conformance to pertinent Indian standards, publications, and regulations
+- Soil Type and Importance factors as listed in Project Specification for Basic Engineering Design Data (BEDD)
+- Zone Factor, Essential Facility Factor, Site Amplification Factor, and Soil Profile as stated on relevant tank data sheet
+- Details of stored liquid and sealing requirement for the seal material of floating roof tanks

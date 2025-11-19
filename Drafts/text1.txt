@@ -1,0 +1,1067 @@
+![](_page_0_Picture_0.jpeg)
+
+# J3 PROGRAM JAMNAGAR, INDIA
+
+# **Specification**
+
+# **Atmospheric Pressure Storage Tanks**
+
+10080-1-SS-ME-004
+
+| 0   | 14.07.12 | Issued for Implementation | SSG<br>14/10/12 | 068VE/        | BoyApr         |
+|-----|----------|---------------------------|-----------------|---------------|----------------|
+| Rev | Date     | Revision Details          | Prepared<br>By  | Checked<br>By | Approved<br>By |
+
+# **RECORD OF REVISIONS**
+
+| Date       | Revision Details                                      | Revision Number |
+|------------|-------------------------------------------------------|-----------------|
+| 14.07.2012 | This specification supersedes EPCMD-1-ENGG-DEP-ME-004 | 0               |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+|            |                                                       |                 |
+
+Date: 14/07/2012, Rev. 0
+
+![](_page_2_Picture_1.jpeg)
+
+# Atmospheric Pressure Storage Tanks
+
+# **Contents**
+
+| 1.  | Purpose                                 | . 1 |
+|-----|-----------------------------------------|-----|
+| 2.  | Scope                                   | . 1 |
+| 3.  | Cost competitive engineering and design | . 1 |
+| 4.  | Conflicts and Deviations                | . 1 |
+| 5.  | Definitions:                            | . 2 |
+| 6.  | Abbreviations:                          | . 2 |
+| 7.  | Codes and Standards:                    | . 3 |
+| 8.  | Basic Design/Assembly/Methodology:      | . 3 |
+| 9.  | Accessories:                            | . 3 |
+| 10. | Inspection and Testing:                 | . 3 |
+| 11. | Preparation for shipment:               | . 3 |
+| 12. | Vendor Data Requirement:                | . 3 |
+| 13. | Attachments:                            |     |
+
+# **1. Purpose**
+
+1.1. This specification is written as a supplement to API 650, "Welded Tanks for Oil Storage" Eleventh Edition, June 2007, & Addendum 3, Aug 2011 effective Feb, 2012. Each paragraph of this specification is numbered to match the corresponding paragraph in API 650. The status of each paragraphs of this specification in relationship to API 650 is indicated, e.g. "Modification", "Substitution", "Addition", "Clarification", "New Paragraph" etc. However the latest edition of API 650 with its revisions & addenda as on the date of placement of order on the Detailed Engineering Contractor shall apply and shall be effective for the full tenure of the project.
+
+# **2. Scope**
+
+2.1. This specification covers the requirements for the design, materials, fabrication, painting, inspection and testing of field erected or shop fabricated, atmospheric and low pressure storage tanks conforming to API 650.
+
+# **3. Cost competitive engineering and design**
+
+To achieve value engineering and cost effective design with required quality and integrity following parameters / criteria shall be considered.
+
+- 3.1. Standardization of size, Capacity and rating (MOC, Thickness, Length, Diameter, Height)
+- 3.2. Optimum Design (Size, Height to diameter ratio)
+- 3.3. Choice of code of practice (ASME / API / IS)
+- 3.4. Proper selection of materials (CS, SS, Non-Ferrous, Clad, Lined, Non-Metallic)
+- 3.5. Judicious Inspection (Final Inspection, Stage wise Inspection, Extent of Inspection, Certification level, TPI)
+
+# **4. Conflicts and Deviations**
+
+- 4.1. In case of conflict, actual or implied, among documents relating to an enquiry or order, the following order of precedence should govern:
+  - a) Material requisition for quotation or purchase order and variations thereto
+  - b) Data sheets and drawings
+  - c) This specification
+  - d) Specified Design Code
+  - e) Other specifications and standards referenced in this specification
+  - f) Other national and international standards
+
+10080-1-SS-ME-004 Page 1 of 26
+
+However, should conflict occur, it shall be the responsibility of the CONTRACTOR to call the OWNER's attention to the conflict and request a ruling or interpretation from OWNER. CONTRACTOR shall not assume which instruction would govern in case of a conflict in ruling or interpretation.
+
+# **5. Definitions:**
+
+- 5.1. CONTRACTOR shall be wholly responsible for the design and construction of the tanks and their integral components. The design details shown on the data sheets and standard drawings are the minimum design requirements.
+- 5.2. CONTRACTOR shall obtain appropriate approvals of his design and construction from the Regulatory Authorities for the region where the equipment is to be installed and operated.
+- 5.3. OWNER "s review of CONTRACTOR "s drawings or release of tank for shipment by OWNER "s inspector shall not relieve the CONTRACTOR of his responsibility for complying with all the requirements of the purchase order.
+
+OWNER will provide basic configuration, service data, design requirements and all other applicable loads. These shall be specified on the tank data sheet and in this specification
+
+5.4. In the specification the concerned parties are denoted as follows:
+
+CONTRACTOR - Tank Manufacturer and erector
+
+CONSTRUCTION MANAGER- Owners Representative OWNER - Reliance Industries Ltd.
+
+# **6. Abbreviations:**
+
+API-- American Petroleum Institute
+
+ASME-- American Society of Mechanical Engineers
+
+ASTM-- American Society of Testing Material
+
+IS-- Bureau of Indian Standards
+
+EEMUA-- Engineering Equipment Manufacturers and Users Association
+
+CS-- Carbon Steel
+
+SS-- Stainless Steel
+
+HP-- Hold point
+
+WP-- Witness Point
+
+IITK-- Indian Institute of technology, Kanpur
+
+GSDMA--Gujarat State Disaster Management Authority
+
+10080-1-SS-ME-004 Page 2 of 26
+
+RI-- Random Inspection
+
+RD-- Review Document
+
+# **7. Codes and Standards:**
+
+As per API 650 & "Supplement to API 650" Cl 1.4
+
+# **8. Basic Design/Assembly/Methodology:**
+
+As per API 650 & Attachment "Supplement to API 650" Cl 4.0, 5.0, 6.0 & Appendixes.
+
+# **9. Accessories:**
+
+All accessories and appurtenances wherever applicable shall be designed, supplied and installed and tested by the contractor. Accessories shall include but not limited to the following:
+
+Flame arrestor, vent / breather valve, Roof drain with valve, Anti-rotation devise, Dip hatch, level indicator, Emergency valve, Rim seal (primary and secondary), rim vent, vacuum breaker, emergency drain, Ladder / platform /rolling ladder, internal ladder, deflector, foam dome.
+
+# **10. Inspection and Testing:**
+
+- 10.1. As per API 650 & Attachment "Supplement to API 650"
+- 10.2. General inspection points shall also include material identification , adherence to agreed ITP , execution of major repairs , Alloy verification , Trial fit up & assembly of internals, holiday check of coating/ lining , painting / coating verification , pickling and passivation , final inspection and dimensional check , ancillary items (spare parts, gaskets, nuts) , cleaning / drying , name plate , Calibration , Settling , Roof stability test , Drain pipe test , static bonding , roof functional test , seal compatibility test, vacuum box test, air leak test .
+- 10.3. Extent of inspection for each inspection point shall be as required by MR. Against each inspection point HP , WP , RI , RD shall be defined and specified as required depending on the criticality of the vessel.
+
+# **11. Preparation for shipment:**
+
+As per API 650 & Attachment "Supplement to API 650"
+
+# **12. Vendor Data Requirement:**
+
+The vendor data requirement shall cover the documents to be submitted by a vendor during the following stages:
+
+#### 12.1. Along with the bid
+
+i. Certificate of approval.
+
+10080-1-SS-ME-004 Page 3 of 26
+
+- ii. Proposed schedule of manufacture
+- iii. Tentative Quality plan
+- iv. List of sub-suppliers.
+- v. Past Experience list.
+- vi. Data marked as "Vendor to Confirm "in inquiry datasheet.
+
+# 12.2. During Manufacturing & site erection
+
+- i. Schedule of drawings and documents.
+- ii. Construction Schedule.
+- iii. Progress reporting
+- iv. General Arrangement drawing.
+- v. Foundation Drawing
+- vi. Design Calculations.
+- vii. Structural & support Calculations.
+- viii. Nozzle load Analysis.
+- ix. Detailed and Cross sectional drawing.
+- x. List / bill of material.
+- xi. Inspection Test Plan
+- xii. Weld procedure
+- xiii. NDE procedure
+- xiv. Material test procedures / certificates
+- xv. Air leak test procedure.
+- xvi. Roof floatation test.
+- xvii. Hydro-test procedures.
+- xviii. Surface preparation and painting
+- xix. Calibration procedure.
+- xx. Specification Waiver
+- xxi. Inspection Release Note
+- 12.3. With the supplied material
+  - i. As required and agreed upon.
+- 12.4. After supply of material
+  - i. Spare list.
+
+10080-1-SS-ME-004 Page 4 of 26
+
+- ii. Manufacturing Record Book (As built of all manufacturing & testing doc)
+- 12.5. During training and site services
+  - i. Spare list and data
+
+10080-1-SS-ME-004 Page 5 of 26
+
+# **13. Attachments:**
+
+#### **Supplement to API 650**
+
+- 1.0 Scope
+- 1.1 General (Clarification)
+
+This specification covers storage tanks for liquids with internal gas or vapour space maintained between maximum pressures of 172 millibars down to millibars of vacuum.
+
+The specific requirements for individual tanks are given in the Tank Data Sheets.
+
+1.3.1. Compliance (Addition)
+
+All aspects of design and construction shall comply with the local, state and the national regulations.
+
+1.3.2. (Addition)
+
+In addition to the specified standards, tanks shall conform to the pertinent Indian standards, publications and regulations. As a minimum requirement, the following Publications shall be considered in the tank design and construction:
+
+- 1. The Petroleum Act, 1934 & Petroleum Rules, 1976
+- 2. National Building Code of India, 2005
+- 3. Explosives Act 1884 & Explosives Rules, 2003, (including Gas Cylinder Rules, 1981)
+- 4. The Factories Act, 1948
+- 5. Chaturvedi & Chaturvedi Law on Protection of Environment & Prevention of Pollution, Law Book Co., 1993
+- 6. Oil Industry Safety Directorate:
+- a) Standard 118 Layout for Oil & Gas Installations
+- b) Index of Standards
+- 7. National Electrical Code 2011
+- 1.4 Referenced Publications (Addition)
+
+Standard API- 650 : Welded tanks for oil storage.
+
+IS-875 (Part-3) Wind Loads : Code of practice for design loads (other than
+
+Earthquake) for building and structures.
+
+IS-1893 Part 1 & 4 : Criteria for earth quake resistant design of structures.
+
+API-2000 : Venting atmospheric and low pressure storage tanks.
+
+10080-1-SS-ME-004 Page 6 of 26
+
+![](_page_9_Picture_0.jpeg)
+
+API RP 2003 : Protection against ignition arising out of static,
+
+Lightening and stray currents.
+
+MPMS-2.2A : Measurement and Calibration of Upright Cylindrical
+
+Tanks by Tank Strapping Method.
+
+MPMS-2.2B : Calibration of Upright Cylindrical Tanks Using the
+
+Optical Reference Line Method.
+
+Indian Standards
+
+IS 2007 : Method of Calibration of Vertical Oil Storage Tanks.
+
+IS 2008 : Method of Computation of Capacity Tables for
+
+Vertical Oil Storage Tanks.
+
+IITK-GSDMA : Guidelines for seismic design of liquid storage tanks-
+
+2005
+
+# 4.0 Materials
+
+Tank Material shall conform to API-650 or equivalent Indian Standard with permissible alloy content as per table 4.1 of API- 650.
+
+#### 4.1.6 General (Substitution)
+
+All material shall be new and of first quality unless otherwise approved by the BUYER in writing.
+
+#### 4.1.7 General (New Paragraph)
+
+Stainless steel materials shall conform to the requirements of the ASME material selection for the designated grade. Identical material produced under an ASTM
+
+#### 4.1.8 General (New Paragraph)
+
+Materials shall be designated in either ASTM or Indian standard. For carbon and carbon manganese steel the carbon content shall be 0.25% maximum and the carbon equivalent (C.E.) shall be 0.43 maximum.
+
+Where 
+$$CE = C + \frac{Mn}{6} + \frac{Cr + Mo + V}{5} + \frac{Cu + Ni}{15}$$
+
+#### 4.2.2 ASTM Specifications (Modification)
+
+c. A283GRC shall not be used for shell, shell reinforcing plate, bottom and annular plate.
+
+#### 4.2.5 National Standards (Clarification) – IS2062
+
+Acceptable Indian Standard material for plates is:
+
+Grade E250
+
+10080-1-SS-ME-004 Page 7 of 26
+
+Sub-qualities – A, BR, BO, C
+
+All these grades have UTS = 410 MPa, with
+
+Yield = 250 for thickness < 20 mm.
+
+MPa
+
+Yield = 240 for thickness 20 to 40
+
+> MPa mm.
+
+Carbon steel plate produced and tested in accordance with Indian Standard IS 2062 is acceptable with the following additional requirements.
+
+- Chemical composition stated in the certification shall include all elements required for calculation of the carbon equivalent per IS 2062.
+- Maximum permissible alloy content shall be as per Table 4.1 of API-650.
+
+ASTM A 537 Class 1 OR SA516 Gr70 to be used for thicknesses greater than 35mm.
+
+- 4.2.6 Carbon steel plate for tanks is to comply with the requirements of Plates for Site Erected Tanks to API 650.
+- 4.7 Bolting (Addition)
+
+Bolting for galvanised steel components shall also be galvanised
+
+5.0 Design
+
+Guidelines
+
+- a) Standard tank sizes are to be based on maximum height of 20m or 1.5x Dia of tank whichever is smaller.
+- b) Maximum tank storage capacity for hydrocarbon liquids shall not exceed 120,000 m3 for Floating roof tank and 60000 m3 for cone roof tank.
+- c) Floating roof tanks of diameter less than or equal to 12m or more than 60m shall be of double deck construction. Tanks having diameter greater than 12m, but less than or equal to 60m can be of single deck annular pontoon type construction with or without buoys.
+- d) When floating roof is in its highest position it shall be capable of holding its design capacity.
+- e) Floating roof shall be of low deck (minimum vapour space) type.
+- f) In addition to the specified design conditions, each tank shall also be designed to store a liquid of specific gravity of 0.9.
+- g) Low temperature tanks shall be designed in accordance with API 620 Appendix Q or Appendix R as applicable.
+
+10080-1-SS-ME-004 Page 8 of 26
+
+- h) Normal capacity for fixed roof tank shall be the volume of cylindrical shell.
+- i) Stored capacity for fixed roof tank shall be equal to nominal capacity minus free board volume (equivalent to 500 mm shell height).
+- j) Nominal capacity (also stored capacity) floating roof tank shall be volume of cylindrical shell minus free board volume (equivalent to 1500 mm shell height).
+- k) Anchorage shall be provided if the ratio of resisting moment to overturning moment is less than 1.5.
+- l) For tanks with diameters exceeding 60 m the shape factor shall be agreed between contractors and the buyer, but shall not be less than 0.7.
+- m) A corrosion allowance of 2 mm shall be applied to the smallest cross- section of the anchor bolts or on the thickness of the anchor straps, regardless of whether corrosion is anticipated.
+
+Roof Seals (Primary and Secondary)
+
+Vapour tight liquid mounted are the preferred types. The application of vapour mounted rim seals shall be avoided (e.g. wiper type of seal).
+
+The circumferential primary roof seal shall be fabric foam filled seal.
+
+Foam filled envelope seals shall be of the liquid mounted type.
+
+Rim mounted secondary roof seals shall use with all primary roof seals systems.
+
+Working range of primary and secondary seal should be specified as: R (-X, + 3X). Details are described in EEMUA 159 appendix D.3.
+
+The primary seal fabric shall be made of flame retardant material in accordance with DIN 22100 or equivalent and shall also be product resistance. For information about suitable material see EEMUA 159 table 12.3.3-1.
+
+The primary seal may have additional protection such as a weather shield or a secondary seal to prevent deterioration of the seal fabric by direct sun radiation and accumulation of rainwater on the seal. The secondary seal shall, if further reduction of emission to air is required, have a working range similar to that of the primary seal.
+
+Other points to consider in selecting a proper seal.
+
+Working range R (-X, +3X)
+
+Emission efficiency
+
+Life time
+
+Earthing of roof
+
+Location of fire detection tube
+
+Operation with waxy crude
+
+10080-1-SS-ME-004 Page 9 of 26
+
+Inspection of primary seal not to be obstructed
+
+UV resistance of e.g. fabric and sealant (rubbers)
+
+Product resistance of e.g. fabric and sealant (rubbers)
+
+Vapour tightness
+
+Fire retardance
+
+The seal material of floating roof tanks shall be able to withstand contact with products having an aromatic content 40% or less and, if exposed to sunlight, shall have adequate UV light resistance properties.
+
+If a product with an aromatic higher content higher than 40% is to be stored, a seal material shall be chosen which will withstand contact with that product.
+
+The rim space (i.e. the gap between the floating roof and the shell) shall be determined by means of the formula in EEMUA 159, section 12.9.3.
+
+The linear heat detection (if required) shall be installed closed to the top of the seal system (see EEMUA 159, Figure 12.3.1-4).
+
+Primary roof drain shall be either coflexip pipe or articulated pipe with HMT pivot master.
+
+Alternative to fabric foam seal, mechanical seal to be quoted as option. However uses of mechanical seal require end user approval.
+
+Asbestos free gasket shall be used and gaskets shall be of single piece construction.
+
+#### 5.1.5.9 (Addition)
+
+Roof plates shall be laid for complete rain water run off with the lower edge of plates in any course overlapping the adjacent lower course.
+
+### 5.2.2 Design Factor (Addition)
+
+Applicable Indian Standard for wind loads:
+
+IS 875 (Part 3)
+
+Terrain Category = 2, Group = B
+
+K1 = 1.08, K2 = 1.1, K3 = 1.0
+
+Wind Speed = 50 m/s
+
+Shape Factor = 0.7
+
+#### 5.2.4. Corrosion Control (Addition)
+
+Tank CONTRACTOR shall provide external tank bottom cathodic corrosion protection for all carbon steel flat bottom tanks supported on soil or bitumin/sand mix. Tanks which are to be coated internally (see Data Sheet) shall also be
+
+10080-1-SS-ME-004 Page 10 of 26
+
+protected internally by cathodic protection. Other tanks shall be cathodically protected externally only.
+
+The CONTRACTOR shall base his design of cathodic protection on API Recommended Practice 651 and on Project Specification.
+
+# 5.2.6.4 (Addition)
+
+Tanks shall be calibrated in accordance with API standards MPMS-2.2A & MPMS-2.2B and Indian Standards IS 2007 and IS 2008.
+
+# 5.6.2. Allowable Stress (Clarification)
+
+The allowable stress for carbon steel plate for materials made to National Standards shall be as applicable in API 650 corresponding to the grade of material.
+
+# 5.6.2.5 (New Paragraph)
+
+Austenitic stainless steel tanks shall be designed in accordance with Appendix S of API 650.
+
+#### 5.7.1.10 Shell Openings (New Paragraph)
+
+For insulated tanks, the standard projections specified for nozzles and manways shall be increased to allow removal of bolts without the need to remove shell insulation.
+
+#### 5.7.1.11 (New Paragraph)
+
+Wherever plates are used for flanges, the plates greater than 20 mm shall be ultrasonically tested. Gasket contact faces of plate flanges shall be machined only after flange to nozzle neck welding has been completed.
+
+#### 5.7.4.1 (Addition)
+
+When shell plates with openings require post weld heat treatment, the openings shall be grouped in as few plates as possible.
+
+#### 5.7.5.1. Shell Manholes (Addition)
+
+Manholes shall have a minimum inside diameter of 24 inches.
+
+The minimum number and size shall be:
+
+| Nominal Tank Diameter     | Minimum Number and Size of Manways<br>per Tank |  |
+|---------------------------|------------------------------------------------|--|
+| m (ft)                    |                                                |  |
+| 12 (40) and less          | 1-24 inch                                      |  |
+| Over 12 (40) to 45 (150)  | 2-24 inch - spaced 180 degrees apart           |  |
+| Over 45 (150) to 61 (200) | 3-24 inch - spaced 120 degrees apart           |  |
+| Over 61 (200)             | 4-24 inch - spaced 90 degrees apart            |  |
+
+10080-1-SS-ME-004 Page 11 of 26
+
+5.7.6.1.a (Addition)
+
+Nozzle flanges above 24" NB (except man ways) shall be as per ANSI B16.47 Series – B Type.
+
+#### 5.7.6.4 (Addition)
+
+The minimum distance from bottom of tank to centre line of any nozzle or manway shall be as per API Standard 650 for regular nozzles – table 5.6a.
+
+- 5.8 Shell Attachments and Tank Appurtenances
+- 5.8.1 Shell Attachments
+
+### 5.8.1.1 (Addition)
+
+All parts of tank gauges, thermometers, tank mixers, swing line and related fittings, foam chambers, sampling devices, etc., that are attached to the tank, shall be installed in accordance with the Manufacturer's instructions.
+
+# 5.8.1.3. (New Paragraph)
+
+Minimum two grounding lugs consisting of a 75 x 75 x 9mm thick, TP 304 S.S. plate with 16mm diameter hole, shall be provided near the tank bottom unless noted otherwise on the data sheet.
+
+Insulation supports shall be provided in accordance with project specification stated in the tank data sheets.
+
+#### 5.8.2 (Addition)
+
+Reinforcement or bearing plates shall be added to the tank bottom under all concentrated loads such as heating coils, support legs for floating roofs, fixed columns, etc. Wear plates 6 mm (0.25 inch) thick shall be installed under pipes discharging against the tank bottom.
+
+#### 5.8.4 (Addition)
+
+The following minimum number of roof manholes is to be provided in cone roof tanks:
+
+Nominal Tank Diameter Minimum Number of Manholes per Tank
+
+m (ft)
+
+30 (100) and less 1 - 20 inch I.D.
+
+#### Over 30 (100) 2 - 20 inch I.D. spaced 180 degrees apart
+
+One roof manway on each tank shall be located just inside of gauge connection to permit adjustment of float.
+
+Roof Nozzles (New Paragraph)
+
+10080-1-SS-ME-004 Page 12 of 26
+
+Flange bolt holes for roof nozzles shall straddle the 0-180 degree tank centre line with 0° at plant north.
+
+# 5.8.7. Water Draw-off Sumps (Addition)
+
+Sumps or any under-bottom fittings that are provided in tanks equipped with annular plates shall be installed so that a minimum clearance of 305 mm (12 inch) plus the width of annular plate is provided between the shell and the edge of the sump or fitting.
+
+Drain nozzles shall be located near a shell manway to facilitate cleaning of sumps.
+
+# 5.8.10.1. Platforms, Walkways and Stairways (New Paragraph)
+
+All tanks shall be provided with access to the roof.
+
+Tanks over 7.3m high shall be provided with a circumferential stairway. The angle of the stairway shall be approximately 45 degrees. Uninsulated tanks may have treads welded directly to the tank shell. Insulated tanks shall have a stringer set out 75mm from the tank insulation.
+
+A 900mm wide top landing shall be provided at the top of the tank shell for fixed roof tanks and open top tanks without floating roofs.
+
+A Gauger's platform with hand railing shall be provided from top of stairway to roof ladder on open top tanks with floating roofs.
+
+#### 5.8.10.2. (New Paragraph)
+
+Tanks 7.3m high or less shall be provided with a vertical ladder, unless otherwise specified. A safety gate shall be provided at the ladder access to the platform.
+
+Ladders shall have a cage.
+
+A top landing shall be provided on steep-sloped fixed roofs and open top tanks without floating roofs.
+
+# 5.8.10.3. (New Paragraph)
+
+Handrail shall be provided at the edge of the tank roof on fixed roof tanks along the entire roof perimeter.
+
+#### 5.8.10.4. (New Paragraph)
+
+Treads and landing shall be made of non-slip, open type welded bar grating. Treads shall have a distinctive non-slip nosing.
+
+#### 5.8.10.5. (New Paragraph)
+
+The minimum height of toeboards shall be 100 mm.
+
+#### 5.8.10.6. (New Paragraph)
+
+10080-1-SS-ME-004 Page 13 of 26
+
+Platforms, including stairways, ladders, handrails and grating shall be hot dipped galvanised unless otherwise specified. Bolting for galvanised steelwork shall also be galvanised.
+
+#### 5.8.10.7. (New Paragraph)
+
+Stairways, ladders and platforms shall meet requirements of project specification stated in the tank data sheet.
+
+#### 5.9.3.3. Deleted
+
+#### 5.10.2.4. Roofs (Addition)
+
+Corrosion allowance to be provided for the roof plate and structure shall be as stated in the tank data sheet.
+
+# 5.10.2.6. (Addition)
+
+CONSTRUCTION MANAGER will specify on relevant tank data sheet if roof to shell joint is to be frangible.
+
+# 5.10.2.10. (New Paragraph)
+
+Roofs which are to be internally coated shall be seal welded inside.
+
+For lined tanks external roof structure shall be used.
+
+#### 5.12 Tank Anchorage
+
+#### 5.12.1 (Addition)
+
+Anchorage shall be provided if the ratio of resisting moment to overturning moment is less than 1.5
+
+When anchoring is required, a concrete ring wall or solid concrete foundation will be provided by others complete with the necessary anchor bolts. Ring wall shall be designed to hold down the anchor load.
+
+When anchoring is required, the CONTRACTOR shall furnish recommendations for the following:-
+
+- a) The number of bolts and the bolt circle diameter.
+- b) The vertical projection of the bolts above the foundation and the threaded length that should be provided.
+- c) Any tolerances that must be held when installing the bolts.
+
+#### 5.12.3 (Addition)
+
+In no instance shall less than four chairs per tank be provided when anchoring is required. The spacing of the chairs shall be equal around the tank circumference whenever possible.
+
+#### 5.12.5 (Addition)
+
+10080-1-SS-ME-004 Page 14 of 26
+
+Corrosion allowance is to be a minimum of 6mm (0.25 inch)
+
+### 5.12.6 (Addition)
+
+Anchor chairs shall be located to clear nozzles, manways, vertical shell seams and exterior shell accessories, including clearance at the base of a stairway or ladder.
+
+#### 6.0 Fabrication
+
+#### 6.2.1. Shop Inspection (Substitution-last sentence)
+
+Mill test reports or certificates of compliance, as provided for in the material specification, shall be furnished to the CONSTRUCTION MANAGER.
+
+#### 7.0 Erection
+
+#### 7.3.5.1 Testing of Shell (Addition)
+
+The duration of the test with tank at the maximum test water level shall be a minimum of one day or until the tank foundation settlement has ceased for all practical purposes.
+
+During hydro test of open floating roof tank, contractor shall demonstrate draining of water by primary roof drain, by filling the top of floating roof with water to the design water level.
+
+#### 7.3.5.2 (Deletion)
+
+Testing of tank shell by any other method than by filling it with water to the maximum level stated in para. 7.3.5(a) is not allowed.
+
+#### 7.3.5.3 (New Paragraph)
+
+A comprehensive tank test procedure shall be specified by the tank CONTRACTOR which shall be submitted for approval by the CONSTRUCTION MANAGER. The water and air test procedures shall specify, as a minimum, the maximum water level, the maximum air pressure, the maximum filling rates, the hold periods, the emergency and normal
+
+emptying procedures, the method and frequency of foundation settlement measurement, the allowable limits for differential and maximum settlement of tank foundation, action to be taken when the maximum foundation settlements are exceeded, the minimum test water temperature and other items considered necessary by tank CONTRACTOR and the CONSTRUCTION MANAGER.
+
+#### 7.3.5.4 (New Paragraph)
+
+The tank CONTRACTOR shall carry out a foundation level survey before, during and after the tank hydrostatic test taking readings at a minimum of 4 equidistant points, no more than 10m apart along tank shell circumference and along one bottom diameter. Tank CONTRACTOR shall prepare a foundation survey report for review by the CONSTRUCTION MANAGER.
+
+10080-1-SS-ME-004 Page 15 of 26
+
+#### 7.3.5.5 (New Paragraph)
+
+Austenitic Stainless Steel tanks shall be hydrotested with water containing not more than 30 ppm of chlorides.
+
+For Carbon steel materials, the test water shall be potable quality with chloride content less than 250 ppm.
+
+# 7.3.5.6 Cleaning (New Paragraph)
+
+Upon completion of construction, and before the tank is tested, CONTRACTOR shall remove all trash and debris from tank interior and roof. All surfaces shall be broom cleaned, and all erection scaffolding, lugs, and clips shall be removed.
+
+#### 7.5.5 Foundations
+
+#### 7.5.5.1 Addition
+
+Start of tank erection by the CONTRACTOR shall constitute acceptance of the foundation with respect to levelness, drainage, and other factors affecting his work.
+
+- 9.0 Welding Procedure and Welder Qualifications
+- 9.5 General (New Paragraph)
+
+Welding, heat treatment and non-destructive testing shall be in accordance with Project Specification.
+
+#### 10.0 Marking
+
+#### 10.1.1 Nameplate (Addition)
+
+A stainless steel nameplate stating reference to API 650 standard shall be attached to a dedicated bracket positioned near a shell manway.
+
+#### 11.0 Firewater Spray Cooling System (New Section)
+
+Where specified in Project documentation, tanks shall be provided with a directional water spray cooling system which shall be designed in accordance with NFPA 15 and following paragraphs 9.1 to 9.6.
+
+Unless otherwise specified on relevant tank data sheet CONTRACTOR shall supply complete tank Firewater Spray Cooling System including support clips/lugs directly welded to shell/roof.
+
+11.1 The firewater delivery rates shall be determined by the Tank CONTRACTOR from heat radiation calculations utilising any industry recognised heat radiation method proposed by tank CONTRACTOR and accepted by CONSTRUCTION MANAGER (e.g. Appendices to Volume I of Part 9 of the Institute of Petroleum Model Code of Safe Practice in the Petroleum Industry).
+
+10080-1-SS-ME-004 Page 16 of 26
+
+- 11.2 The directional water spray system shall protect both the roofs and the exposed Sides of each tank from heat generated by the fire of product contained in the tanks or spilled into a bund of an adjacent or nearby tank. Multiple tanks in single bunds shall be treated as single tanks (i.e. the directional spray systems shall not be designed to protect a tank from a fire in its own bund).
+- 11.3 The vertical distance between lines of spray header shall not exceed 3.7m.
+- 11.4 The directional water spray cooling systems shall be arranged for manual control from safely located fire control points outside the bunded areas. The design and supply of the water spray cooling system shall include all valving, piping and controls associated with the system. The fire water piping shall be terminated at a single flange at 1000mm above tank grade level. The control system will be located by the CONSTRUCTION MANAGER outside of the bunded area. The piping between the fire water interface point and outside of the bund will be provided by the CONSTRUCTION MANAGER.
+- 11.5 The design of the directional water spray cooling systems shall allow the selective operation of parts of each system on each tank exposed to fire radiation.
+- 11.6 For purpose of calculation, the fire water supply temperature shall be assumed to be 50°C.
+- 12.0 Fire Fighting Foam (New Section)
+
+Where specified in Project Documentation tanks shall be provided with a fire fighting foam system, designed in accordance with NFPA 11 and following paragraph 12.1.
+
+Unless otherwise specified on relevant tank data sheet CONTRACTOR shall supply complete tank Fire Fighting Foam System including support clips/lugs directly welded to shell/roof.
+
+12.1 The system shall comprise of foam makers, foam chambers, foam pourers, foam dam on the floating roofs and piping terminating 1m above the grade.
+
+#### **APPENDIX B (API 650)**
+
+#### **Recommendations for the Design and Construction of the Foundations**
+
+B.5 Tank Foundations for Leak Detection (Addition)
+
+Tank foundations in service other than water, shall be designed to include a subgrade protection membrane with facility for leak detection and collection in accordance with API 650 Appendix I. The design of the membrane shall include
+
+10080-1-SS-ME-004 Page 17 of 26
+
+facility for leak testing of the membrane to demonstrate its effectiveness. The subgrade protection membrane shall be compatible with externally applied impressed current protection system, where specified.
+
+#### B.7 (New Paragraph)
+
+Anchor Bolts, if required, shall be specified by the CONTRACTOR, see 5.12.1 (Additions). CONTRACTOR is to specify all anchor bolt loadings.
+
+B.8 (New paragraph)
+
+Whenever anchor bolts are provided, concrete foundation shall be designed to hold down anchor load.
+
+B.9 (New Paragraph)
+
+Minimum size of anchor bolt shall be M33.
+
+#### **APPENDIX C (API 650)**
+
+#### **External Floating Roofs**
+
+C.1 (Addition)
+
+Pan-type floating roofs are not acceptable for open floating roof tanks.
+
+C.3.1.1 (Addition)
+
+Roofs shall be designed to resist all effects of the wind loading.
+
+C.3.1.4 (Add)
+
+Roofs shall be designed and erected to eliminate the accumulations of excessive amounts of standing water when the appropriate drains are open.
+
+Pontoon and double-deck compartments shall be sized and arranged to provide suitable space for personnel to erect, inspect, maintain and repair these areas.
+
+C.3.3.1 (Modification)
+
+Roofs shall be of the contact type to eliminate the presence of any air-vapour mixture under the deck.
+
+C.3.3.7 (Addition)
+
+Each opening in the roof except for automatic bleeder vents and rim space vents shall provide a projection below the liquid surface.
+
+C.3.3.8 (Addition)
+
+Each opening in the roof except for automatic bleeder vents, rim space vents and leg sleeves shall be equipped with a cover, seal or lid with no visible gaps.
+
+C.3.3.9 (Addition)
+
+10080-1-SS-ME-004 Page 18 of 26
+
+Emergency roof drains shall be provided with a slotted membrane fabric cover that covers at least 90 per cent of the opening.
+
+#### C.3.3.10 (Addition)
+
+Rim seal vents shall be furnished when flexible metallic seals are employed. The vents shall be capable of releasing any excess air or non-condensable vapours that may enter the tank through the filling line.
+
+#### C.3.4.1 (Add)
+
+Open floating roof shall be provided with emergency drain constructed from stainless steel.
+
+# C.3.4.2 (Modification)
+
+Calculations are required for external floating roof designs. Alternative proof test shall be included in the proposal.
+
+#### C.3.5.1 (New Paragraph)
+
+Annular pontoon access manways shall be 20 inches minimum inside diameter.
+
+# C.3.7 (Addition)
+
+All open top tanks with floating roofs shall have, and be proportioned to accommodate, rolling stairs from top of tank to floating roof. Stairs shall have flat self-leveling treads. All ladders, including rolling ladder shall be provided with a safety gate on the platform side.
+
+#### C.3.8 (Addition)
+
+Primary roof drain system shall be the closed type using pipe and swing joints.
+
+Swing joints in roof drain piping are to be of the balanced type to avoid overstressing of the joint.
+
+### C.3.9 (New Paragraph)
+
+CONSTRUCTION MANAGER will specify the maximum filling and emptying rates for the tank and the CONTRACTOR shall determine and recommend the number and sizes of automatic bleeder vents to be provided for this condition. Automatic Bleeder Vents shall be furnished for venting air to or from the underside of deck bottom when filling or emptying the tank. Vents shall be sized for the specified maximum filling and emptying rates. Such recommendation shall be subject to CONSTRUCTION MANAGER's approval, and in no case shall less than two 6 in. nominal diameter vents be provided per tank.
+
+Rim bleeder vents shall be provided when flexible metal seals are employed.
+
+Vents shall be capable of releasing any excess air or non-condensible vapours that may enter tank through filling line.
+
+#### C.3.9.1 (New Paragraph)
+
+10080-1-SS-ME-004 Page 19 of 26
+
+![](_page_22_Picture_0.jpeg)
+
+Vents located at or near the outer rim shall be provided on all tanks that will be equipped with vapour seals.
+
+Unless otherwise specified by the CONSTRUCTION MANAGER, the following minimum number and size of rim vents shall be provided:-
+
+Nominal Tank Diameter m Min. number and Size of Rim Vents per
+
+(ft) Tank
+
+37 (120) and less 1-4 in
+
+Over 37 (120) to 61 (200) 2-4 in Over 61 (200) to 84 (275) 2-6 in Over 84 (275) 3-6 in
+
+# C.3.10.3 (Addition)
+
+Adjustable roof supports for an operating level of 0.75 m (30 inches) and a cleaning / maintenance level of 1.8 m (72 inch) shall be furnished. These dimensions must be adjusted for clearance of internal equipment installed in the tank, i.e. tank heaters, mixers, etc. Bearing plates shall be centred under each roof support.
+
+### C.3.11.1 (New Paragraph)
+
+CONTRACTOR shall provide the following minimum number of roof manholes for access, light, and ventilation for the space under the roof:-
+
+Nominal Tank Diameter Minimum Number of Manholes per Tank
+
+m (ft)
+
+30 (100) and less 1 - 24 inch I.D.
+
+Over 30 (100) to 76 (250) 2 - 24 inch I.D. spaced 180 degrees apart Over 76 (250) 3 - 24 inch I.D. spaced 120 degrees apart
+
+#### C.3.11.2 (New Paragraph)
+
+When the tank is to be equipped with a primary hose drainage system, an additional 30 in. (762mm) diameter roof manhole shall be provided immediately above the connection point of the fixed section of pipe from the roof sump and the hose to assist inspection, maintenance, and replacement. In such instances, the manhole necks shall extend 8 inches (200mm) above the roof decks.
+
+#### C.3.12 (Addition)
+
+The CONTRACTOR, at the time of quoting, shall specify in sufficient detail, for the CONSTRUCTION MANAGER to evaluate, the proposed centering and antirotation devices to maintain the roof in a centred position and to prevent its rotation.
+
+10080-1-SS-ME-004 Page 20 of 26
+
+# C.3.13 (Addition after 1st paragraph)
+
+The seal material shall be compatible with the liquid stored. The details of stored liquid and sealing requirement will be furnished to the CONTRACTOR. CONTRACTOR's offer shall include details of the proposed seal.
+
+Tanks shall be equipped with two seals, one above the other. The lower seal is the primary seal. The upper seal is the secondary seal.
+
+The primary seal shall be either a metallic shoe seal, or a liquid mounted seal.
+
+- a) The accumulated area of gaps between the tank wall and the metallic shoe seal or the liquid mounted seal shall not exceed 210 cm² per meter of tank diameter (10.0 inch² per foot of tank diameter). The width of any portion of any gap shall not exceed 38 mm (1.5 inches).
+- b) The accumulated area of gaps between the tank wall and the vapour mounted seal shall not exceed 21.5 cm² per meter of tank diameter (1.0 inch² per foot of tank diameter). The width of any portion of any gap shall not exceed 12.5 mm (0.5 inch).
+- c) There shall be no holes, tears, or other openings in the shoe, seal fabric or seal envelope.
+- d) All seal components shall be stable toward tank liquid or tank vapour.
+
+A secondary seal shall be rim mounted and be installed above the primary seal so that it covers the space between the roof edge and the tank wall.
+
+- a) The accumulated area between the tank wall and the secondary seal shall not exceed 21.5 cm² per meter of tank diameter (1.0 inch² per foot of tank diameter). The width of any gap shall not exceed 12.5 mm (0.5 inch).
+- b) There shall be no holes, tears or other openings in the seal or seal fabric.
+- c) All seal components shall be stable toward weather, extreme sunlight, tank liquid or tank vapour.
+
+#### C.3.13 (Addition after 2nd paragraph)
+
+Positive electric bond is required from the floating roof deck to the tank shell.
+
+#### C.3.15 (Addition)
+
+Friction bearing components like ladder wheel rims, gauge hatch, rim vent lids etc, shall be made of non-sparking material.
+
+#### C.3.16 (Addition)
+
+The recommendations of API RP2003 for protection against Static Electricity, Lightning and Stray Currents are to be complied with. CONTRACTOR shall supply any hardware attached to tank that is necessary to comply with these recommendations.
+
+10080-1-SS-ME-004 Page 21 of 26
+
+# **APPENDIX E (API 650)**
+
+#### **Seismic Design of Storage Tanks**
+
+#### E.1 Scope (Addition)
+
+This Appendix shall be used to establish minimum basic requirements for seismic design.
+
+Tanks shall be designed as per IS 1893 Part 1 & 4 to resist earthquake using an appropriate seismic zone factor. Soil type and Importance factors as listed in Project Specification for Basic Engineering Design Data (BEDD).
+
+Soil Type =1.0
+
+Importance Factors
+
+Static Design
+
+Standard Structures: Importance Factor = 1.0
+
+Standard Structures Containing: Importance Factor =1.25
+
+Hazardous Materials
+
+Dynamic Design
+
+Standard Structures: Importance Factor = 1.0
+
+Standard Structures Containing: Importance Factor = 1.25
+
+Hazardous Materials
+
+Zone Factor, Essential Facility Factor, Site Amplification Factor and Soil Profile are to be as stated on relevant tank data sheet.
+
+#### E.8.2 (Modification)
+
+The roof support columns shall be designed to resist the forces caused by sloshing of the liquid contents.
+
+#### **APPENDIX F (API 650)**
+
+#### **Design of Tanks for small internal pressures**
+
+#### F.7.1 (Addition)
+
+Tanks whose shell thickness required for pressure plus corrosion allowance exceed 12.5mm (0.5 inch) shall be designed and constructed in accordance with standard API 620.
+
+#### F.7.4 (Addition)
+
+Ring wall foundation shall be provided to hold down the anchor bolts and shall be designed to act as counter weight.
+
+10080-1-SS-ME-004 Page 22 of 26
+
+Minimum size of anchor bolt shall be M33
+
+# **APPENDIX H (API 650)**
+
+# **Internal Floating Roofs**
+
+# H.2.2 (a) (Substitution)
+
+Pan-type floating roofs are not acceptable for covered floating roof tanks.
+
+# H.2.2 (h) (Substitution)
+
+Plastic sandwich panel roofs shall not be used.
+
+# H.4.1.6 Modification
+
+Internal floating roofs shall be bonded electrically by means of flexible stainless steel cables.
+
+The recommendations of API RP2003 for protection against Static Electricity, Lightning and Stray Currents are to be complied with. CONTRACTOR shall supply any hardware attached to tank that is necessary to comply with these recommendations.
+
+#### H.4.1.10 (Addition)
+
+When the internal roof is of a design using floats (deck above liquid), roof drains shall be provided and extended into the product a minimum of 100 mm (4 inches).
+
+#### H.4.1.11 (Addition)
+
+Each opening in the floating cover except for automatic bleeder vents and rim space vents shall project below the liquid surface.
+
+#### H.4.1.12 (Addition)
+
+Each opening in the cover except for automatic bleeder vents, rim space vents, stub drains and leg sleeves shall be equipped with a cover, seal or lid with no visible gaps.
+
+#### H.4.1.13 (Addition)
+
+A corrosion gauge for the floating roof shall be provided adjacent to the internal ladder. (Roof skin strip material suspended in to liquid)
+
+# H.4.4.2 (Modification)
+
+"By the purchaser" in the first sentence to be replaced with "by the CONTRACTOR".
+
+#### H 4.4.5 (Addition)
+
+10080-1-SS-ME-004 Page 23 of 26
+
+Primary seal is to be vapour mounted and the secondary seal is to be rim mounted.
+
+#### H.5.1.1 (Modification)
+
+Second and Third sentences to be replaced by "Permanent ladder shall be provided for access from the fixed roof to the floating roof deck."
+
+# H.5.5.1 (Addition)
+
+Tanks over 30 m (100 ft) shall have 2 manways in the fixed roof, spaced 180° apart.
+
+# H.5.5.2 (Addition)
+
+Tanks over 30 m (100 ft) shall have 2 manways in the floating roof, spaced 180° apart.
+
+#### H.5.5.3 (Modification)
+
+Inspection hatches shall be provided on the fixed roof to permit visual inspection of the seal region. The number and location of hatches will be specified by the CONSTRUCTION MANAGER.
+
+#### **APPENDIX N (API 650)**
+
+#### **Use of Materials that are not identified (Addition)**
+
+Materials not completely identified shall not be used without prior written approval from the OWNER
+
+#### **APPENDIX O (API 650)**
+
+#### **Recommendations for Under-Bottom Connections (Addition)**
+
+This appendix is mandatory for all under-bottom connections.
+
+#### **APPENDIX P (API 650)**
+
+#### **Allowable External Loads on Tank Shell Openings (Addition)**
+
+This appendix is mandatory for the design of storage-tank openings when an external piping load is specified. CONTRACTOR shall provide calculations justifying the acceptability of the specified loading.
+
+#### P.1.1 Nozzle Loads (Addition)
+
+As a minimum requirement, shell mounted nozzles shall be designed for loading as specified in the following table. Nozzle loads that are higher than those listed in the table may be specified by CONSTRUCTION MANAGER where necessary to suit
+
+10080-1-SS-ME-004 Page 24 of 26
+
+the piping layout. CONTRACTOR shall be responsible to confirm the acceptability of the specified external nozzle and support pad loading or advise the maximum loading acceptable for the tank design.
+
+| TANK NOZZLE LOADING   |                                 |                      |                      |  |  |
+|-----------------------|---------------------------------|----------------------|----------------------|--|--|
+| Nozzle Size<br>(Inch) | Radial Load<br>(N)              | Circ. Moment<br>(Nm) | Long. Moment<br>(Nm) |  |  |
+| 2 and below           | Loads are considered negligible |                      |                      |  |  |
+| 3                     | 1000                            | 200                  | 200                  |  |  |
+| 4                     | 1500                            | 300                  | 300                  |  |  |
+| 6                     | 2500                            | 700                  | 700                  |  |  |
+| 8                     | 4000                            | 1500                 | 1500                 |  |  |
+| 10                    | 5000                            | 2500                 | 2500                 |  |  |
+| 12                    | 7000                            | 4000                 | 4000                 |  |  |
+| 14                    | 9000                            | 6000                 | 6000                 |  |  |
+| 16                    | 11000                           | 8000                 | 8000                 |  |  |
+| 18                    | 13000                           | 10000                | 10000                |  |  |
+| 20                    | 15000                           | 13000                | 13000                |  |  |
+| 24                    | 20000                           | 18000                | 18000                |  |  |
+
+Loadings for nozzles greater than 24 inch NB are to be agreed between CONTRACTOR and CONSTRUCTION MANAGER.
+
+Loadings shown in the above table, apply at the nozzle to shell junction.
+
+#### **APPENDIX S (API 650)**
+
+#### **Austenitic Stainless Steel Storage Tanks (Addition)**
+
+This Appendix is mandatory for Storage Tanks constructed of Austenitic Stainless Steel.
+
+10080-1-SS-ME-004 Page 25 of 26
+
+#### **Attachment - 2**
+
+#### **Vendor Document / Data Format**
+
+# 1. Scope:
+
+These instructions define the control, content and formant of documentation to be submitted as part of contract. These instructions shall be used in conjunction with "Vendor Data Requirements".
+
+# 2. Document / data Submission Requirements:
+
+Documents / data required to be submitted by vendor shall be as per "Vendor Data Requirements" at different stages and schedules. However final as built data and documents of entire manufacture and testing shall be provided in the MRB (Manufacturing Record Book). Any submissions required to be submitted to third party like Process Licensors / Statutory Authorities or TPI shall also be complied with.
+
+### 3. Document / Data Formant Requirements:
+
+#### i) Medium:
+
+Submission of documents shall be on Buyers standard forms unless otherwise agreed. Where not provided by Buyer, Vendor's forms are acceptable.
+
+Buyer reserves the right to substitute paper format with electronic documents/ data for completion by the Vendor.. In such cases Vendor will be responsible for provisions and support of both hardware and software required to interface with and use Buyers preferred format.
+
+#### ii) Electronic Format:
+
+Buyer requires documents / data for review to be submitted electronically, in Abode Acrobat Portable Document Format. Buyers "Electronic Document Submittal Guidelines:" have been provided enable the integration of vendors documents into the Buyers EDMS. The Buyers EDMS shall facilitate the review of the Vendors documents and may also be used by the operator for continued maintenance of the plant.
+
+#### iii) Language:
+
+All documents shall be legible and shall be submitted in English language unless otherwise requested by project specific attachments to the Material Requisition.
+
+#### iv) Documentation Quality:
+
+All images shall be legible and properly oriented for viewing. Colour images should only be supplied where absolutely necessary (colour coding etc.).
+
+10080-1-SS-ME-004 Page 26 of 26

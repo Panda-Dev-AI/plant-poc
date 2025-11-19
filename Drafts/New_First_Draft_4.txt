@@ -1,0 +1,12 @@
+Since the provided document does not explicitly list specifications or additional requirements specifically for Nozzle Load Analysis in a direct manner, I will extract the relevant information based on the context and mentions related to nozzle loads, as per the instructions. However, it's important to note that the document is extensive and covers a wide range of specifications for atmospheric pressure storage tanks, including materials, design, fabrication, and testing, in accordance with API 650 and other standards. The document also includes appendices and attachments that detail various aspects of tank design and construction, but explicit, direct mentions of Nozzle Load Analysis specifications or additional requirements from the client are not provided in the text excerpts.
+
+### Specifications for Evaluation of Nozzle Load Analysis:
+
+- **P.1.1 Nozzle Loads (Addition):** Specifies minimum requirements for shell-mounted nozzles designed for loading as per a given table, which includes radial load, circumferential moment, and longitudinal moment for various nozzle sizes.
+
+### Additional Requirements from Client:
+
+- **Loadings for nozzles greater than 24 inch NB:** To be agreed between CONTRACTOR and CONSTRUCTION MANAGER.
+- **Confirmation of acceptability of specified external nozzle and support pad loading:** CONTRACTOR is responsible for confirming or advising the maximum loading acceptable for the tank design.
+
+Given the nature of the document, these points are derived from the sections that directly mention nozzle loads, which are crucial for performing a Nozzle Load Analysis. Any further, specific requirements for conducting a comprehensive Nozzle Load Analysis would likely depend on additional details or specifications not included in the provided excerpts.

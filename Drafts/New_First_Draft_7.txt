@@ -1,0 +1,20 @@
+### Specifications for Evaluation of Nozzle Load Analysis:
+
+- Specification 1: Pressure (Kg/Cm<sup>2</sup> g) for various utilities and systems.
+- Specification 2: Temperature (°C) for various utilities and systems.
+- Specification 3: Design Pressure (Kg/Cm<sup>2</sup> g) for various utilities and systems.
+- Specification 4: Design Temperature (°C) for various utilities and systems.
+- Specification 5: Min, Normal, and Max operating conditions for various utilities and systems.
+- Specification 6: Voltage and Frequency (Hz) for electrical systems.
+- Specification 7: Phase and Earthing details for electrical systems.
+
+### Inputs Required from Client:
+
+- Input 1: Detailed utility requirements including pressures, temperatures, and flow rates for the nozzle load analysis.
+- Input 2: Electrical system requirements including voltage, frequency, phase, and earthing details.
+- Input 3: Specific requirements or constraints related to the design pressures and temperatures for various utilities and systems.
+
+### Additional Requirements from Client:
+
+- Requirement 1: Confirmation of the operating conditions (Min, Normal, Max) for various utilities and systems to ensure accurate nozzle load analysis.
+- Requirement 2: Any specific design codes or standards that need to be adhered to for the nozzle load analysis, beyond those already specified in the document.

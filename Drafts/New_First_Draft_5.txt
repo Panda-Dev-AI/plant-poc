@@ -1,0 +1,8 @@
+Specifications for Evaluation of Nozzle Load Analysis:
+- Specification 1: Pressure (Kg/Cm2 g) for various utilities including raw water, sea water, desalinated water, cooling water, demineralized water, potable water, fire water system, steam (HHP, HP, MP, LP), condensate (HP, MP, LP), fuel gas, natural gas, PSA tail gas, syn gas, fuel oil, plant air, breathing air, instrument air, nitrogen (high pressure, low pressure, LLP, medium pressure dilute), and electricity (HT level, LT level, electrical control supply, small power and lighting supply, UPS level, switchgear control).
+- Specification 2: Temperature (°C) for the same utilities as mentioned above.
+- Specification 3: Design conditions including maximum and minimum pressure and temperature for all utilities.
+
+Additional Requirements from Client:
+- Requirement 1: Verification of current installation specifications at Jamnagar to ensure they are applicable for J3 project design.
+- Requirement 2: Finalization of battery limit conditions during facility design for utilities such as raw water, sea water, desalinated water, cooling water, demineralized water, potable water, fire water system, steam, condensate, fuel gas, natural gas, PSA tail gas, syn gas, fuel oil, plant air, breathing air, instrument air, nitrogen, and electricity based on J3 unit requirements, geographic locations, line routings, and system constraints.

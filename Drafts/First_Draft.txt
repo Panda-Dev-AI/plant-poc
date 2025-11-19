@@ -1,0 +1,46 @@
+### Equipment with Specifications
+
+- **Atmospheric Pressure Storage Tanks**
+  - **Material**: Carbon steel (ASTM A 537 Class 1 or SA516 Gr70 for thickness > 35mm)
+  - **Design**: Conform to API 650, with additional requirements for seismic design (IS 1893 Part 1 & 4)
+  - **Accessories**: Flame arrestor, vent/breather valve, roof drain with valve, etc.
+  - **Inspection and Testing**: As per API 650, including hydro-test and air leak test
+
+### Overall Summary
+
+The document outlines the specifications for atmospheric pressure storage tanks for the J3 Program in Jamnagar, India. It supplements API 650 with additional requirements for design, materials, fabrication, and testing. The tanks are to be constructed using carbon steel, with specific standards for thickness and alloy content. Design considerations include seismic loads, wind loads, and corrosion protection. Accessories such as flame arrestors, vent valves, and roof drains are specified. Inspection and testing protocols adhere to API 650, with additional requirements for hydrostatic testing and air leak tests. The document also details vendor data requirements and submission formats.
+
+### Tables
+
+| **Table Name**                 | **Summary**                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------|
+| Revision History               | Lists revisions made to the document, with the latest revision on 14.07.2012 |
+| Tank Manholes                  | Specifies the minimum number and size of manholes based on tank diameter    |
+| Roof Manholes                  | Specifies the minimum number of roof manholes for cone roof tanks           |
+| Nozzle Loads                   | Provides loading specifications for nozzles of various sizes                |
+
+### Figures
+
+| **Figure Name** | **Summary**                                  |
+|-----------------|----------------------------------------------|
+| Picture 0       | Title page image for the J3 Program document |
+| Picture 1       | Image related to atmospheric storage tanks  |
+| Picture 2       | Additional image for specifications          |
+
+### Sections
+
+| **Section Name**                  | **Summary**                                                                 |
+|-----------------------------------|-----------------------------------------------------------------------------|
+| Purpose                           | Explains the intent of the specification as a supplement to API 650         |
+| Scope                             | Covers design, materials, fabrication, and testing of storage tanks        |
+| Cost competitive engineering      | Discusses parameters for cost-effective design                              |
+| Conflicts and Deviations          | Establishes the order of precedence for conflicting documents              |
+| Definitions                      | Defines key terms used in the document                                      |
+| Abbreviations                    | Lists abbreviations for standards and materials                             |
+| Codes and Standards              | References API 650 and other relevant standards                             |
+| Basic Design/Assembly/Methodology | Outlines the design and assembly process                                    |
+| Accessories                      | Details required accessories for the tanks                                  |
+| Inspection and Testing           | Specifies inspection and testing protocols                                  |
+| Preparation for shipment         | Covers requirements for preparing tanks for shipment                       |
+| Vendor Data Requirement          | Lists documents required from vendors at various stages                    |
+| Attachments                      | Includes supplementary information and vendor document formats              |

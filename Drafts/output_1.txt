@@ -1,0 +1,40 @@
+Here is a summary of the document:
+
+1. Purpose
+- This specification is a supplement to API 650 for the design, materials, fabrication, painting, inspection and testing of atmospheric and low pressure storage tanks.
+
+2. Scope  
+- Covers requirements for field erected or shop fabricated atmospheric and low pressure storage tanks per API 650.
+
+3. Cost Competitive Engineering and Design
+- Considerations for achieving value engineering and cost effective design like standardization, optimum design, code selection, proper material selection, judicious inspection, etc.
+
+4. Conflicts and Deviations
+- Order of precedence in case of conflicts.
+
+5. Definitions
+- Defines responsibilities of contractor, construction manager, owner.
+
+6. Abbreviations
+- Lists abbreviations used.
+
+7. Codes and Standards
+- References API 650 and other relevant standards.
+
+8-12. Provides additions/modifications to the corresponding sections of API 650 covering:
+- Basic design requirements 
+- Materials
+- Fabrication 
+- Inspection and testing
+- Documentation requirements
+
+13. Attachments
+- Supplement to API 650 with additional requirements on topics like seals, foundations, low temperatures, external loads, etc.
+
+The specification has several tables summarizing requirements for items like:
+- Manway sizes and quantities 
+- Nozzle loading allowances
+- Minimum sizes for roof manholes
+- Minimum rim vent sizes
+
+It also provides specific design guidelines for aspects like tank sizes, roof types, anchorage requirements, corrosion allowances, etc.
