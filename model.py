@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 # Initialize OpenAI client with your API key
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="Your-API-Key")
 
 # You can change this to any model that supports chat completions
 MODEL = "gpt-5-mini"
