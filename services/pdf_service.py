@@ -105,9 +105,7 @@ def format_processed_text(text: str, user_input: str) -> str:
     # Add professional footer
     formatted_lines.append("<br/>")
     formatted_lines.append("<br/>")
-    formatted_lines.append("<hr/>")
-    formatted_lines.append(f"<font name='Helvetica' size=9 color='#95a5a6'>End of Engineering Analysis Report</font>")
-    
+    formatted_lines.append("<hr/>") 
     return "\n".join(formatted_lines)
 
 def create_table_html(table_data):
@@ -242,7 +240,7 @@ def process_pdf(input_pdf_path: str, user_input: str = "") -> str:
             # Convert to PDF
             convert_txt_to_pdf(temp_txt, output_path)
             
-            return str(output_path)
+            return str(output_path),processed_text
         finally:
             # Cleanup temp file if it exists
             if os.path.exists(temp_txt):

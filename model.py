@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 # Initialize OpenAI client with your API key
-client = OpenAI(api_key="Your-API_Key")
+client = OpenAI(api_key="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")
 
 # You can change this to any model that supports chat completions
 MODEL = "gpt-5-mini"
@@ -67,7 +67,7 @@ def process_with_openai(text: str,user_input: str) -> str:
     messages = [
         {"role": "system", "content": INSTRUCTIONS},
         {"role": "user", "content": document},
-        {"role": "user", "content": user_input}
+        {"role": "user", "content": user_input}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
     ]
 
     response = client.responses.create(

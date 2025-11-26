@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi import FastAPI, File, Form, UploadFile, HTTPException, status
 import uvicorn
-
+from fastapi.responses import JSONResponse
 # Local imports
 from services.file_service import save_upload_file
 from services.pdf_service import process_pdf
@@ -74,14 +74,17 @@ async def upload_file(
         
         try:
             # Process the PDF with the additional user input
-            output_pdf_path = process_pdf(file_path, user_input=user_input)
+            output_pdf_path,processed_text = process_pdf(file_path, user_input=user_input)
             logger.info(f"File processed successfully: {output_pdf_path}")
             
             # 5. Return the processed file
-            return FileResponse(
-                output_pdf_path,
-                media_type="application/pdf",
-                filename=os.path.basename(output_pdf_path)
+            return JSONResponse(
+                content={
+                    "success": True,
+                    "message": "File processed successfully",
+                    "file_path": output_pdf_path,
+                    "processed_text": processed_text
+                }
             )
             
         except Exception as e:
@@ -99,7 +102,20 @@ async def upload_file(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail="An unexpected error occurred"
         )
-
+@app.get("/download/")
+async def download_file(output_pdf_path):
+    try:
+        return FileResponse(
+            output_pdf_path,
+            media_type="application/pdf",
+            filename=os.path.basename(output_pdf_path)
+        )
+    except Exception as e:
+        logger.error(f"Error downloading file: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error downloading file: {str(e)}"
+        )
 @app.get("/health")
 async def health_check():
     """Health check endpoint"""
