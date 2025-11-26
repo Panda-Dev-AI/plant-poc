@@ -1,7 +1,7 @@
 from openai import OpenAI
 
 # Initialize OpenAI client with your API key
-client = OpenAI(api_key="Your-API-Key")
+client = OpenAI(api_key="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")
 
 # You can change this to any model that supports chat completions
 MODEL = "gpt-5-mini"
@@ -17,7 +17,9 @@ Your role is to:
    - Are relevant to {user_input} according to industry standards.
    - Are explicitly mentioned in the provided document.
    - Do not include inferred or assumed information—stick strictly to what is stated in the text.
-
+4. Don't make it as a Conversational, Like (In the end, do not add text asking (Eg. If you want, I can next: 
+   • Identify the exact data fields that the vendor's "Nozzle load Analysis" submittal should contain (based on the document's requirements and API 650 Appendix P), or
+   • Produce a checklist for the vendor submittal (e.g., nozzle ID, size, location, applied radial/axial/shear/moments, pad/plate detail, justification vs table values, attachments).))
 Instructions:
 
 Section 1: Accepted Specifications for Evaluation of {user_input}
