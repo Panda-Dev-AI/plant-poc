@@ -1,15 +1,21 @@
 import os
 import logging
 from pathlib import Path
+from typing import List
 from fastapi import FastAPI, UploadFile, File, HTTPException, status, Form
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
-from fastapi import FastAPI, File, Form, UploadFile, HTTPException, status
+from fastapi.responses import FileResponse, JSONResponse
 import uvicorn
-from fastapi.responses import JSONResponse
+
 # Local imports
-from services.file_service import save_upload_file
-from services.pdf_service import process_pdf
+from services.file_service import save_upload_file, get_unique_filename
+from services.pdf_service import (
+    process_pdf,
+    extract_text_from_pdf,
+    process_with_openai,
+    format_processed_text,
+    convert_txt_to_pdf
+)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -42,56 +48,90 @@ from fastapi import Form, File, UploadFile
 
 @app.post("/upload/")
 async def upload_file(
-    file: UploadFile = File(..., description="PDF file to process"),
+    files: list[UploadFile] = File(..., description="PDF files to process"),
     user_input: str = Form("", description="Additional input text to include in processing")
 ):
     """
-    Upload a PDF file for processing.
+    Upload multiple PDF files for processing.
     
-    The uploaded file will be processed as follows:
-    1. Saved to the uploads directory with a unique name
-    2. Text is extracted using Marker library
-    3. Extracted text is processed by OpenAI
-    4. Result is converted back to PDF with '_Specs' suffix
-    5. Versioning is applied if file already exists
+    The uploaded files will be processed as follows:
+    1. Each file is saved to the uploads directory with a unique name
+    2. Text is extracted from each file using Marker library
+    3. Extracted text from all files is combined
+    4. Combined text is processed by OpenAI with the user input
+    5. Result is converted to a single PDF with '_Specs' suffix
     
     Returns:
-        FileResponse: The processed PDF file
+        JSONResponse: Contains success status, message, and path to the processed PDF
     """
     try:
-        logger.info(f"Received file upload: {file.filename}")
-        
-        # 1. Save the uploaded file
-        try:
-            file_path = await save_upload_file(file, UPLOAD_DIR)
-            logger.info(f"File saved to: {file_path}")
-        except Exception as e:
-            logger.error(f"Error saving file: {str(e)}")
+        if not files:
             raise HTTPException(
                 status_code=status.HTTP_400_BAD_REQUEST,
-                detail=f"Invalid file: {str(e)}"
+                detail="No files provided"
             )
+
+        logger.info(f"Received {len(files)} files for processing")
+        
+        saved_files = []
+        all_processed_text = ""
+        
+        # Process each uploaded file
+        for file in files:
+            try:
+                # 1. Save the uploaded file
+                file_path = await save_upload_file(file, UPLOAD_DIR / file.filename)
+                logger.info(f"File saved to: {file_path}")
+                saved_files.append(file_path)
+                
+                # 2. Extract text from the file
+                try:
+                    processed_text = extract_text_from_pdf(file_path)
+                    all_processed_text += f"\n\n--- File: {file.filename} ---\n{processed_text}"
+                except Exception as e:
+                    logger.error(f"Error extracting text from {file.filename}: {str(e)}")
+                    raise HTTPException(
+                        status_code=status.HTTP_400_BAD_REQUEST,
+                        detail=f"Error processing {file.filename}: {str(e)}"
+                    )
+                    
+            except Exception as e:
+                logger.error(f"Error processing file {file.filename}: {str(e)}")
+                # Clean up any saved files if there's an error
+                for f in saved_files:
+                    try:
+                        os.remove(f)
+                    except:
+                        pass
+                raise HTTPException(
+                    status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                    detail=f"Error processing {file.filename}: {str(e)}"
+                )
         
         try:
-            # Process the PDF with the additional user input
-            output_pdf_path,processed_text = process_pdf(file_path, user_input=user_input)
-            logger.info(f"File processed successfully: {output_pdf_path}")
+            # Process all files together with the user input
+            output_pdf_path, processed_text = process_pdf(
+                saved_files[0],  # Use first file's path for naming
+                user_input=user_input,
+                combined_text=all_processed_text
+            )
             
-            # 5. Return the processed file
+            logger.info(f"Files processed successfully. Output: {output_pdf_path}")
+            
             return JSONResponse(
                 content={
                     "success": True,
-                    "message": "File processed successfully",
+                    "message": f"Successfully processed {len(files)} files",
                     "file_path": output_pdf_path,
                     "processed_text": processed_text
                 }
             )
             
         except Exception as e:
-            logger.error(f"Error processing file: {str(e)}")
+            logger.error(f"Error in final processing: {str(e)}")
             raise HTTPException(
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                detail=f"Error processing file: {str(e)}"
+                detail=f"Error in final processing: {str(e)}"
             )
             
     except HTTPException:
@@ -100,7 +140,7 @@ async def upload_file(
         logger.error(f"Unexpected error: {str(e)}")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="An unexpected error occurred"
+            detail=f"An unexpected error occurred: {str(e)}"
         )
 @app.get("/download/")
 async def download_file(output_pdf_path):
@@ -125,12 +165,36 @@ async def health_check():
         "processed_dir": str(PROCESSED_DIR.absolute())
     }
 
+def get_local_ip():
+    """Get the local IP address for the network"""
+    import socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        # Doesn't need to be reachable
+        s.connect(('10.254.254.254', 1))
+        IP = s.getsockname()[0]
+    except Exception:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return IP
+
 if __name__ == "__main__":
+    # Get local IP address
+    host = '0.0.0.0'  # Listen on all network interfaces
+    port = 8000
+    local_ip = get_local_ip()
+    
+    print("\n" + "="*50)
+    print(f"Backend server starting...")
+    print(f"Local: http://127.0.0.1:{port}")
+    print(f"Network: http://{local_ip}:{port}")
+    print("="*50 + "\n")
+    
     # Run the FastAPI application
     uvicorn.run(
         "main:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True,
-        log_level="info"
+        host=host,
+        port=port,
+        reload=True
     )

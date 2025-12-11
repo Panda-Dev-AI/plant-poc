@@ -1,10 +1,13 @@
 from openai import OpenAI
+from dotenv import load_dotenv
+import os
 
-# Initialize OpenAI client with your API key
-client = OpenAI(api_key="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")
+load_dotenv()
+API_Key = os.getenv("API_Key")
 
-# You can change this to any model that supports chat completions
-MODEL = "gpt-5-mini"
+client = OpenAI(api_key=API_Key)
+
+MODEL = "gpt-5-mini"  # or "gpt-4o"
 
 INSTRUCTIONS = (
     """ You are a senior procurement engineer analyzing plant design documents with a focus on {user_input} (specified by the user, e.g., "Nozzle Load Analysis").
@@ -61,40 +64,29 @@ DOC_TEMPLATE = (
 [DOCUMENT_END]"""
 )
 
-def process_with_openai(text: str,user_input: str) -> str:
-    # Format the document template with the input text
+def process_with_openai(text: str, user_input: str) -> str:
+    instructions_filled = INSTRUCTIONS.replace("{user_input}", user_input)
     document = DOC_TEMPLATE.replace("{insert_plant_design_text_here}", text)
-    user_input = user_input.replace("{user_input}", user_input)
-    
-    messages = [
-        {"role": "system", "content": INSTRUCTIONS},
+
+    convo = [
+        {"role": "system", "content": instructions_filled},
         {"role": "user", "content": document},
-        {"role": "user", "content": user_input}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+        {"role": "user", "content": user_input},
     ]
 
     response = client.responses.create(
-            model=MODEL,
-            input=messages,
-            reasoning={"effort": "low"},
-            text={"verbosity": "medium"},
-        )
- 
-    print(response.output[1].content[0].text)
-    return response.output[1].content[0].text
+        model=MODEL,
+        input=convo,
+        reasoning={"effort": "low"},
+        text={"format": {"type": "text"}},
+        max_output_tokens=2000,
+    )
 
+    out = ""
+    for item in response.output:
+        if getattr(item, "content", None):
+            for c in item.content:
+                if getattr(c, "text", None):
+                    out += c.text
 
-# def main():
-#     try:
-#         with open("reliance.txt", "r", encoding="utf-8") as f:
-#             text = f.read()
-#         result = process_with_openai(text,user_input)
-#         with open("New_First_Draft_7.txt", "w", encoding="utf-8") as f:
-#             f.write(result)
-#         print("Processing completed successfully!")
-#     except FileNotFoundError:
-#         print("Error: text1.txt not found.")
-#     except Exception as e:
-#         print(f"An error occurred: {str(e)}")
-
-# if __name__ == "__main__":
-#     main()
+    return out
