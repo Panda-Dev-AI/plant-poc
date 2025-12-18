@@ -46,6 +46,14 @@ app.add_middleware(
 
 from fastapi import Form, File, UploadFile
 
+@app.get("/api/video")
+async def get_video():
+    video_path = "D:/git-plant/plant-poc/pdf-upload-frontend/public/videos/Untitled video - Made with Clipchamp.mp4"
+    if os.path.exists(video_path):
+        return FileResponse(video_path)
+    return {"error": "Video not found"}, 404
+
+
 @app.post("/upload/")
 async def upload_file(
     files: list[UploadFile] = File(..., description="PDF files to process"),
@@ -88,6 +96,7 @@ async def upload_file(
                 try:
                     processed_text = extract_text_from_pdf(file_path)
                     all_processed_text += f"\n\n--- File: {file.filename} ---\n{processed_text}"
+                    print(f"content: {all_processed_text}")
                 except Exception as e:
                     logger.error(f"Error extracting text from {file.filename}: {str(e)}")
                     raise HTTPException(

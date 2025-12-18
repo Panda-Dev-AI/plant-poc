@@ -1,11 +1,13 @@
+# pdf_service.py - UPDATED (remove decorative separators)
 import os
 from pathlib import Path
+import re
 import torch
 from marker.converters.pdf import PdfConverter
 from marker.models import create_model_dict
 from marker.output import text_from_rendered
 from model import process_with_openai
-from pdf_Convertor import convert_txt_to_pdf
+from pdf_Convertor import text_to_pdf
 from services.file_service import get_unique_filename
 import logging
 
@@ -16,146 +18,86 @@ logger = logging.getLogger(__name__)
 
 def format_processed_text(text: str, user_input: str) -> str:
     """
-    Format the processed text with professional structure for PDF generation.
-    Returns text optimized for reportlab PDF conversion.
+    Take OpenAI output and turn it into CLEAN PLAIN TEXT (no HTML) 
+    NO decorative separators like dashes or n's
     """
     from datetime import datetime
 
     if not text:
         return "No content available."
 
-    # Split text into lines and clean up
-    lines = text.split('\n')
-    formatted_lines = []
+    # Strip any LLM HTML / ReportLab markup completely
+    text = re.sub(r'<[^>]*>', '', text)
+    text = text.replace('&nbsp;', ' ')
+    text = text.replace('&bull;', '•')
+    text = text.replace('\u2011', '-')  # non‑breaking hyphen
+    text = text.replace('\u2013', '-')  # en dash
+    text = text.replace('\u2014', '-')  # em dash
 
-    # Add professional document header
-    formatted_lines.append(
-        "<b><font name='Helvetica-Bold' size=18 color='#2c3e50'>"
-        "ENGINEERING SPECIFICATION ANALYSIS"
-        "</font></b>"
-    )
-    formatted_lines.append(
-        f"<font name='Helvetica' size=14 color='#34495e'>"
-        f"<i>Focus Area: {user_input}</i></font>"
-    )
-    formatted_lines.append(
-        "<font name='Helvetica-Oblique' size=10 color='#7f8c8d'>"
-        f"Generated on {datetime.now().strftime('%B %d, %Y')}"
-        "</font>"
-    )
-    formatted_lines.append("<br/>")
-    formatted_lines.append("<br/>")
+    lines = [line.strip() for line in text.split('\n') if line.strip()]
 
-    current_section = None
-    bullet_points = False
-    table_data = []
-    in_table = False
+    formatted: list[str] = []
+    
+    # Header block
+    formatted.append("ENGINEERING SPECIFICATION ANALYSIS")
+    formatted.append(f"Focus Area: {user_input if user_input else 'Entire Document'}")
+    formatted.append(f"Generated on {datetime.now().strftime('%B %d, %Y')}")
+    formatted.append("")
 
     for line in lines:
-        line = line.strip()
-        if not line:
-            formatted_lines.append("<br/>")
+        l = line.strip()
+        if not l:
             continue
 
-        # Check for section headers
-        if line.startswith("Section") or line.startswith("Focus:"):
-            # Close any open table first
-            if in_table and table_data:
-                formatted_lines.append(create_table_html(table_data))
-                table_data = []
-                in_table = False
-                formatted_lines.append("<br/>")
+        lower = l.lower()
 
-            # Add section header with professional styling
-            formatted_lines.append("<br/>")
-            formatted_lines.append(
-                f"<b><font name='Helvetica-Bold' size=14 color='#2c3e50'>{line}</font></b>"
-            )
-            formatted_lines.append("<br/>")
-            current_section = line
-            bullet_points = False
-            continue
+        # Section-like lines (NO dashes underneath)
+        if any(kw in lower for kw in [
+            "purpose and scope",
+            "applicable codes",
+            "design and performance",
+            "material and component",
+            "loads, allowables",
+            "loads and allowables",
+            "execution, testing",
+            "execution requirements",
+            "client inputs",
+            "client requirements"
+        ]):
+            formatted.append("")
+            formatted.append(l)  # NO dashes, just the line
 
-        # Check for bullet points or numbered lists
-        if (
-            line.startswith("-")
-            or line.startswith("*")
-            or (line[0].isdigit() and "." in line[:5])
-        ):
-            # Close any open table
-            if in_table and table_data:
-                formatted_lines.append(create_table_html(table_data))
-                table_data = []
-                in_table = False
-                formatted_lines.append("<br/>")
+        # Subsection-like lines
+        elif any(kw in lower for kw in [
+            "requirements:", "standard:", "standards:",
+            "specification:", "specifications:",
+            "data:", "table", "note:"
+        ]):
+            formatted.append("")
+            formatted.append(f"[SUBSECTION] {l}")
 
-            clean_point = line.lstrip("-*0123456789. ")
-            formatted_lines.append(f"&nbsp;&nbsp;&nbsp;&nbsp;&bull; {clean_point}")
-            bullet_points = True
+        # Bullet-ish lines (including numbered)
+        elif l.startswith(("•", "-", "*")) or (l[:3].isdigit() and l[3:4] in {".", ")"}):
+            clean = re.sub(r'^[\-\*\•\d\)\.\s]+', '', l).strip()
+            formatted.append(f"  • {clean}")
 
-        # Check for key-value pairs (potential table data)
-        elif ":" in line and not line.startswith("Section") and not line.startswith("Focus:"):
-            key, value = line.split(":", 1)
-            key = key.strip()
-            value = value.strip()
-            if key and value:
-                table_data.append([key, value])
-                in_table = True
-                bullet_points = False
+        # Source / reference lines
+        elif "(from" in lower:
+            formatted.append(f"    [SOURCE] {l}")
 
-        # Regular paragraph content
         else:
-            # Close any open table
-            if in_table and table_data:
-                formatted_lines.append(create_table_html(table_data))
-                table_data = []
-                in_table = False
-                formatted_lines.append("<br/>")
+            formatted.append(l)
 
-            if bullet_points:
-                formatted_lines.append("<br/>")
-                bullet_points = False
+    formatted.append("")
+    # NO decorative nnnnn or dashes - just simple END marker
+    formatted.append("END OF ENGINEERING SPECIFICATION ANALYSIS")
 
-            # Add paragraph with proper spacing
-            formatted_lines.append(line)
-            formatted_lines.append("<br/>")
-
-    # Close any remaining table
-    if in_table and table_data:
-        formatted_lines.append(create_table_html(table_data))
-
-    # Add professional footer
-    formatted_lines.append("<br/>")
-    formatted_lines.append("<br/>")
-    formatted_lines.append("<hr/>")
-    return "\n".join(formatted_lines)
-
-
-def create_table_html(table_data):
-    """
-    Helper function to create HTML table for reportlab.
-    """
-    if not table_data:
-        return ""
-
-    table_html = "<table border=1 cellpadding=8 cellspacing=0 width='100%'>"
-
-    for i, row in enumerate(table_data):
-        if len(row) >= 2:
-            bg_color = '#ecf0f1' if i % 2 == 0 else '#ffffff'
-            table_html += "<tr>"
-            table_html += f"<td bgcolor='{bg_color}'><b>{row[0]}</b></td>"
-            table_html += f"<td bgcolor='{bg_color}'>{row[1]}</td>"
-            table_html += "</tr>"
-
-    table_html += "</table>"
-    return table_html
+    return "\n".join(formatted)
 
 
 def extract_text_from_pdf(pdf_path: str) -> str:
-    """Extract text from PDF using Marker library with GPU acceleration."""
+    """Extract text from PDF using Marker with GPU if available."""
     try:
-        # Check CUDA availability and GPU info
         print(f"CUDA available: {torch.cuda.is_available()}")
         if torch.cuda.is_available():
             print(f"CUDA device count: {torch.cuda.device_count()}")
@@ -170,29 +112,24 @@ def extract_text_from_pdf(pdf_path: str) -> str:
             print(f"PyTorch version: {torch.__version__}")
             print(f"PyTorch built with CUDA: {torch.cuda.is_built()}")
 
-        # Set device to GPU if available
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         print(f"Using device: {device}")
 
-        # Add configuration to prevent tqdm issues
         os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
         try:
             model_dict = create_model_dict()
             if model_dict is None:
                 raise ValueError(
-                    "Failed to create model dictionary - Marker models not properly initialized"
+                    "Failed to create model dictionary - Marker models not initialized"
                 )
 
             if torch.cuda.is_available():
-                # Move model components to GPU
                 for key in model_dict:
-                    if model_dict[key] is not None and hasattr(model_dict[key], 'to'):
+                    if model_dict[key] is not None and hasattr(model_dict[key], "to"):
                         model_dict[key] = model_dict[key].to(device)
 
             converter = PdfConverter(artifact_dict=model_dict)
-
-            # Convert PDF to text
             rendered = converter(pdf_path)
             text, _, _ = text_from_rendered(rendered)
 
@@ -202,8 +139,7 @@ def extract_text_from_pdf(pdf_path: str) -> str:
             return text
 
         except AttributeError as ae:
-            if 'disable_tqdm' in str(ae):
-                # Specific handling for tqdm disable issue
+            if "disable_tqdm" in str(ae):
                 print("Encountered tqdm configuration issue, attempting fallback...")
                 try:
                     from tqdm import tqdm
@@ -242,53 +178,38 @@ def process_pdf(
     combined_text: str = None
 ) -> tuple[str, str]:
     """
-    Process a PDF, run it through OpenAI, and generate a formatted PDF.
+    Process a PDF, run it through OpenAI, and generate a styled PDF.
     Returns (output_pdf_path_as_str, processed_text).
     """
     try:
-        # If combined_text is not provided, extract text from the input file
+        # 1. Extract or reuse text
         if combined_text is None:
             text = extract_text_from_pdf(input_pdf_path)
         else:
             text = combined_text
 
-        # Process the text with OpenAI
+        # 2. OpenAI processing
         print("OPENAI Processing")
         processed_text = process_with_openai(text, user_input=user_input)
 
-        # Format the processed text for PDF
+        # 3. Format as clean plain text
         print("Formatting")
         formatted_text = format_processed_text(processed_text, user_input)
 
-        # Generate output filename
+        # 4. Output path
         print("Generating output filename")
         input_path = Path(input_pdf_path)
         output_filename = f"{input_path.stem}_Specs.pdf"
-
-        # Use pathlib for the processed directory
         processed_dir = Path("processed")
         processed_dir.mkdir(exist_ok=True)
-        output_pdf_path = processed_dir / output_filename  # Path object
+        output_pdf_path = processed_dir / output_filename
 
-        # Save formatted text to a temporary file
-        print("Saving formatted text to a temporary file")
-        temp_txt = "temp_processed.txt"
-        try:
-            with open(temp_txt, "w", encoding="utf-8") as f:
-                f.write(formatted_text)
+        # 5. Direct text → PDF (no temp HTML)
+        print("Converting to PDF")
+        text_to_pdf(formatted_text, str(output_pdf_path))
 
-            # Convert to PDF; ensure output path is a string
-            print("Converting to PDF")
-            convert_txt_to_pdf(temp_txt, str(output_pdf_path))
-
-            # Return string paths instead of Path objects
-            print("Returning string paths")
-            return str(output_pdf_path), processed_text
-        finally:
-            # Cleanup temp file
-            print("Cleanup temp file")
-            if os.path.exists(temp_txt):
-                os.remove(temp_txt)
+        print("Returning string paths")
+        return str(output_pdf_path), processed_text
 
     except Exception as e:
         logger.error(f"Error in process_pdf: {str(e)}")
@@ -296,60 +217,43 @@ def process_pdf(
 
 
 def get_output_path(input_pdf_path: str) -> Path:
-    """
-    Generate output path for the processed PDF.
-
-    Args:
-        input_pdf_path: Path to the input PDF file
-
-    Returns:
-        Path: Output path for the processed PDF
-    """
+    """Generate output path for a processed PDF."""
     input_path = Path(input_pdf_path)
     output_filename = f"{input_path.stem}_processed{input_path.suffix}"
     return Path("processed") / output_filename
 
 
-def create_pdf_from_text(text: str, output_path: str) -> None:
+def convert_txt_to_pdf(text: str, output_path: str) -> None:
     """
-    Create a PDF from the given text.
-
-    Args:
-        text: Text content to convert to PDF
-        output_path: Path where the PDF should be saved
+    Legacy helper: simple text → PDF without styling.
+    Kept in case you still use it elsewhere.
     """
     from reportlab.lib.pagesizes import letter
     from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
     from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 
-    # Normalize to Path and ensure directory exists
     output_path_obj = Path(output_path)
     output_dir = output_path_obj.parent
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Create a PDF document
     doc = SimpleDocTemplate(str(output_path_obj), pagesize=letter)
 
-    # Get default style
     styles = getSampleStyleSheet()
-    style_normal = styles['Normal']
+    style_normal = styles["Normal"]
 
-    # Create a custom style for better formatting
     custom_style = ParagraphStyle(
-        'CustomStyle',
+        "CustomStyle",
         parent=style_normal,
         fontSize=10,
         leading=14,
-        spaceAfter=6
+        spaceAfter=6,
     )
 
-    # Split text into paragraphs and create story
     story = []
-    for line in text.split('\n'):
+    for line in text.split("\n"):
         if line.strip():
             p = Paragraph(line, custom_style)
             story.append(p)
-            story.append(Spacer(1, 6))  # Add some space between paragraphs
+            story.append(Spacer(1, 6))
 
-    # Build the PDF
     doc.build(story)

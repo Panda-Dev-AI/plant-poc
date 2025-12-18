@@ -1,46 +1,61 @@
 import os
 import shutil
 from pathlib import Path
-from typing import Union, Optional
-import logging
+from typing import Optional
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-# Base directory for uploads and processed files
-UPLOAD_DIR = Path("uploads")
-PROCESSED_DIR = Path("processed")
-
-# Ensure directories exist
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-os.makedirs(PROCESSED_DIR, exist_ok=True)
+def ensure_directory(directory: Path) -> None:
+    """Ensure the specified directory exists."""
+    directory.mkdir(parents=True, exist_ok=True)
 
 async def save_upload_file(upload_file, destination: Path) -> str:
-    """Save an uploaded file to the specified destination."""
+    """
+    Save uploaded file with a unique filename in the specified directory.
+    
+    Args:
+        upload_file: The uploaded file object from FastAPI
+        destination: Directory where the file should be saved
+        
+    Returns:
+        str: Path to the saved file
+    """
     try:
-        # Create the destination directory if it doesn't exist
-        destination.parent.mkdir(parents=True, exist_ok=True)
+        ensure_directory(destination)
+        
+        # Get file extension and generate a unique filename
+        file_extension = os.path.splitext(upload_file.filename)[1].lower()
+        if file_extension != '.pdf':
+            raise ValueError("Only PDF files are supported")
+            
+        unique_filename = f"{os.urandom(8).hex()}{file_extension}"
+        file_path = destination / unique_filename
         
         # Save the file
-        with open(destination, "wb") as buffer:
+        with open(file_path, "wb") as buffer:
             shutil.copyfileobj(upload_file.file, buffer)
             
-        return str(destination)
+        return str(file_path)
     except Exception as e:
-        logger.error(f"Error saving file {upload_file.filename}: {str(e)}")
-        raise
+        raise Exception(f"Error saving uploaded file: {str(e)}")
 
-def get_unique_filename(path: Union[str, Path]) -> Path:
-    """Generate a unique filename by appending numbers if the file exists."""
-    path = Path(path)
-    if not path.exists():
-        return path
+def get_unique_filename(filepath: str) -> str:
+    """
+    Generate a unique filename by appending version numbers if the file exists.
+    
+    Args:
+        filepath: The desired file path
         
-    # If file exists, append a number to the filename
-    counter = 1
+    Returns:
+        str: A unique file path with versioning if needed
+    """
+    if not os.path.exists(filepath):
+        return filepath
+        
+    base, ext = os.path.splitext(filepath)
+    base, ext = os.path.splitext(original_path)
+    version = 1
+    
     while True:
-        new_path = path.with_name(f"{path.stem}_{counter}{path.suffix}")
-        if not new_path.exists():
+        new_path = f"{base}_v{version}{ext}"
+        if not os.path.exists(new_path):
             return new_path
-        counter += 1
+        version += 1

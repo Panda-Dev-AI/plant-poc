@@ -1,313 +1,318 @@
-from reportlab.lib.pagesizes import letter, A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+# pdf_Convertor.py - UPDATED (cleaner, no dashes under sections)
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import (
+    SimpleDocTemplate,
+    Paragraph,
+    Spacer,
+    PageBreak,
+)
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib.enums import TA_LEFT, TA_CENTER, TA_JUSTIFY
+from reportlab.lib.enums import TA_LEFT, TA_CENTER
 from reportlab.lib import colors
 from reportlab.lib.units import inch
-import re
-from datetime import datetime
-from reportlab.platypus import Frame, PageTemplate
 from reportlab.pdfgen import canvas
-import time
+from datetime import datetime
+import re
 
-class PageNumberCanvas(canvas.Canvas):
-    """Custom canvas class to add page numbers to PDF footer"""
+
+class HeaderFooterCanvas(canvas.Canvas):
+    """Custom canvas class to add professional headers, footers, and page numbers."""
+
     def __init__(self, *args, **kwargs):
         canvas.Canvas.__init__(self, *args, **kwargs)
         self.pages = []
-    
+
     def showPage(self):
-        """Override showPage to save page state"""
+        """Override showPage to save page state."""
         self.pages.append(dict(self.__dict__))
         self._startPage()
-    
+
     def save(self):
-        """Override save to add page numbers before final save"""
+        """Override save to add headers and footers before final save."""
         num_pages = len(self.pages)
         for page in range(num_pages):
             self.__dict__.update(self.pages[page])
-            self.draw_page_number(page + 1, num_pages)
+            self.draw_header_footer(page + 1, num_pages)
             canvas.Canvas.showPage(self)
         canvas.Canvas.save(self)
-    
-    def draw_page_number(self, page_num, total_pages):
-        """Draw page number in footer"""
+
+    def draw_header_footer(self, page_num, total_pages):
+        """Draw professional header and footer on each page."""
         self.saveState()
-        self.setFont('Helvetica', 9)
-        self.setFillColorRGB(0.58, 0.65, 0.65)  # #95a5a6
-        self.drawCentredString(self._pagesize[0] / 2, 30, f"Page {page_num} of {total_pages}")
+
+        # ===== HEADER =====
+        self.setStrokeColorRGB(0.2, 0.4, 0.6)  # Professional blue
+        self.setLineWidth(1.5)
+        self.line(
+            40, self._pagesize[1] - 60,
+            self._pagesize[0] - 40, self._pagesize[1] - 60
+        )
+
+        self.setFont("Helvetica-Bold", 11)
+        self.setFillColorRGB(0.2, 0.4, 0.6)
+        self.drawString(50, self._pagesize[1] - 45, "Plant Design Document Analysis")
+
+        self.setFont("Helvetica", 9)
+        self.setFillColorRGB(0.5, 0.5, 0.5)
+        self.drawRightString(
+            self._pagesize[0] - 50,
+            self._pagesize[1] - 45,
+            "Engineering Specification Report",
+        )
+
+        # ===== FOOTER =====
+        self.setStrokeColorRGB(0.2, 0.4, 0.6)
+        self.setLineWidth(1.5)
+        self.line(40, 50, self._pagesize[0] - 40, 50)
+
+        self.setFont("Helvetica", 9)
+        self.setFillColorRGB(0.3, 0.3, 0.3)
+        page_text = f"Page {page_num} of {total_pages}"
+        page_width = self.stringWidth(page_text, "Helvetica", 9)
+        self.drawString((self._pagesize[0] - page_width) / 2, 32, page_text)
+
+        self.setFont("Helvetica", 8)
+        self.setFillColorRGB(0.6, 0.6, 0.6)
+        date_text = f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+        self.drawString(50, 32, date_text)
+        self.drawRightString(self._pagesize[0] - 50, 32, "Confidential")
+
         self.restoreState()
 
-def convert_txt_to_pdf(input_file, output_file):
-    # Create a PDF document with margins
+
+def create_styled_document(text_content: str, pdf_file: str):
+    """
+    Convert CLEAN text content to a styled, professional PDF.
+    No decorative separators - clean and professional.
+    """
+
     doc = SimpleDocTemplate(
-        output_file,
+        pdf_file,
         pagesize=letter,
-        leftMargin=72,
-        rightMargin=72,
-        topMargin=72,
-        bottomMargin=72
+        leftMargin=60,
+        rightMargin=60,
+        topMargin=90,
+        bottomMargin=70,
+        title="Engineering Specification Report",
     )
-    
-    # Get default styles
+
     styles = getSampleStyleSheet()
-    
-    # Function to safely add or update style
-    def add_or_update_style(name, **kwargs):
-        if name in styles:
-            for key, value in kwargs.items():
-                setattr(styles[name], key, value)
-        else:
-            styles.add(ParagraphStyle(name=name, **kwargs))
-    
-    # Add or update styles
-    add_or_update_style(
-        'Title',
-        parent=styles['Heading1'],
-        fontSize=18,
-        leading=22,
-        spaceAfter=24,
-        textColor=colors.HexColor('#2c3e50'),
-        alignment=TA_CENTER
+
+    # Title style - main report title
+    title_style = ParagraphStyle(
+        "ReportTitle",
+        parent=styles["Heading1"],
+        fontName="Helvetica-Bold",
+        fontSize=22,
+        leading=26,
+        spaceAfter=6,
+        textColor=colors.HexColor("#1a4d7a"),
+        alignment=TA_CENTER,
     )
-    
-    add_or_update_style(
-        'Heading1',
-        parent=styles['Heading1'],
-        fontSize=16,
-        leading=20,
-        spaceAfter=12,
-        spaceBefore=24,
-        textColor=colors.HexColor('#2c3e50'),
-        borderPadding=5
-    )
-    
-    add_or_update_style(
-        'Normal_Spaced',
-        parent=styles['Normal'],
-        fontSize=11,
-        leading=14,
-        spaceAfter=8,
-        textColor=colors.HexColor('#333333')
-    )
-    
-    add_or_update_style(
-        'Bullet',
-        parent=styles['Normal'],
-        leftIndent=20,
-        firstLineIndent=-10,
-        spaceAfter=4,
-        bulletIndent=10
-    )
-    
+
     # Subtitle style
     subtitle_style = ParagraphStyle(
-        'CustomSubtitle',
-        parent=styles['Heading2'],
-        fontSize=14,
-        leading=18,
-        spaceAfter=20,
-        spaceBefore=6,
-        textColor=colors.HexColor('#34495e'),
-        alignment=TA_CENTER,
-        fontName='Helvetica'
-    )
-    
-    # Section header style
-    section_style = ParagraphStyle(
-        'CustomSection',
-        parent=styles['Heading2'],
-        fontSize=14,
-        leading=18,
-        spaceAfter=12,
-        spaceBefore=24,
-        textColor=colors.HexColor('#2c3e50'),
-        fontName='Helvetica-Bold'
-    )
-    
-    # Body text style - justified for professional look
-    body_style = ParagraphStyle(
-        'CustomBody',
-        parent=styles['Normal'],
+        "ReportSubtitle",
+        parent=styles["Normal"],
+        fontName="Helvetica-Oblique",
         fontSize=11,
         leading=14,
-        spaceAfter=6,
-        spaceBefore=6,
-        textColor=colors.black,
-        alignment=TA_JUSTIFY,
-        fontName='Helvetica'
+        spaceAfter=18,
+        textColor=colors.HexColor("#555555"),
+        alignment=TA_CENTER,
     )
-    
-    # Date style
-    date_style = ParagraphStyle(
-        'CustomDate',
-        parent=styles['Normal'],
+
+    # Section header style - blue band (CLEAN, no dashes)
+    section_header_style = ParagraphStyle(
+        "SectionHeader",
+        parent=styles["Heading2"],
+        fontName="Helvetica-Bold",
+        fontSize=14,
+        leading=17,
+        spaceAfter=12,
+        spaceBefore=18,
+        textColor=colors.HexColor("#ffffff"),
+        alignment=TA_LEFT,
+        backColor=colors.HexColor("#2c5aa0"),
+        leftIndent=0,
+    )
+
+    # Subsection header style
+    subsection_style = ParagraphStyle(
+        "SubsectionHeader",
+        parent=styles["Heading3"],
+        fontName="Helvetica-Bold",
+        fontSize=12,
+        leading=15,
+        spaceAfter=8,
+        spaceBefore=12,
+        textColor=colors.HexColor("#2c5aa0"),
+        alignment=TA_LEFT,
+    )
+
+    # Body text style
+    body_style = ParagraphStyle(
+        "CustomBody",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=11,
+        leading=15,
+        spaceAfter=6,
+        spaceBefore=0,
+        textColor=colors.HexColor("#333333"),
+        alignment=TA_LEFT,
+    )
+
+    # Bullet point style
+    bullet_style = ParagraphStyle(
+        "BulletStyle",
+        parent=styles["Normal"],
+        fontName="Helvetica",
+        fontSize=11,
+        leading=15,
+        spaceAfter=4,
+        spaceBefore=0,
+        textColor=colors.HexColor("#333333"),
+        leftIndent=25,
+        bulletIndent=15,
+        alignment=TA_LEFT,
+    )
+
+    # Source reference style
+    source_style = ParagraphStyle(
+        "SourceReference",
+        parent=styles["Normal"],
+        fontName="Helvetica-Oblique",
+        fontSize=9,
+        leading=12,
+        spaceAfter=4,
+        spaceBefore=0,
+        textColor=colors.HexColor("#666666"),
+        alignment=TA_LEFT,
+        leftIndent=25,
+    )
+
+    # Metadata style
+    metadata_style = ParagraphStyle(
+        "Metadata",
+        parent=styles["Normal"],
+        fontName="Helvetica",
         fontSize=10,
         leading=12,
-        spaceAfter=30,
-        textColor=colors.HexColor('#7f8c8d'),
+        spaceAfter=24,
+        textColor=colors.HexColor("#777777"),
         alignment=TA_CENTER,
-        fontName='Helvetica-Oblique'
     )
-    
-    # Footer style for page numbers
-    footer_style = ParagraphStyle(
-        name='FooterStyle',
-        fontName='Helvetica',
-        fontSize=9,
-        textColor='#95a5a6',
-        alignment=TA_CENTER,  # Center the text
-    )
-    
-    # Read the input text file
-    with open(input_file, 'r', encoding='utf-8') as file:
-        content = file.read()
 
-    # Split content into paragraphs
-    paragraphs = content.split('\n\n')
-    
-    # Create story (content container)
+    # End marker style
+    end_marker_style = ParagraphStyle(
+        "EndMarker",
+        parent=styles["Normal"],
+        fontName="Helvetica-Bold",
+        fontSize=11,
+        alignment=TA_CENTER,
+        spaceAfter=0,
+        textColor=colors.HexColor("#2c5aa0"),
+    )
+
     story = []
-    
-    # Add title
-    title = Paragraph("Plant Document Analysis", styles['Title'])
-    story.append(title)
-    story.append(Spacer(1, 24))
-    
-    # Add metadata
-    metadata = f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-    story.append(Paragraph(metadata, styles['Normal_Spaced']))
-    story.append(Spacer(1, 36))  # Add space after metadata
-    story.append(Paragraph("End of Engineering Analysis Report", footer_style))
 
-    # Process each paragraph
-    for paragraph in paragraphs:
-        if not paragraph.strip():
+    # ===== TITLE PAGE =====
+    story.append(Spacer(1, 60))
+    story.append(Paragraph("Engineering Specification Report", title_style))
+    story.append(Spacer(1, 8))
+    story.append(Paragraph("Plant Design Document Analysis", subtitle_style))
+    story.append(Spacer(1, 20))
+
+    story.append(
+        Paragraph(
+            f"<b>Generated:</b> {datetime.now().strftime('%B %d, %Y at %H:%M:%S')}",
+            metadata_style,
+        )
+    )
+    story.append(Spacer(1, 60))
+    story.append(PageBreak())
+
+    # ===== PROCESS CONTENT (plain text) =====
+    lines = text_content.split("\n")
+
+    section_keywords = [
+        "purpose and scope",
+        "applicable codes",
+        "design and performance",
+        "material and component",
+        "material and component specifications",
+        "loads, allowables",
+        "loads and allowables",
+        "execution, testing",
+        "execution requirements",
+        "client inputs",
+        "client requirements",
+    ]
+
+    for raw_line in lines:
+        line = raw_line.strip()
+        if not line:
+            story.append(Spacer(1, 4))
             continue
-        
-        # Split paragraph into lines
-        lines = paragraph.split('\n')
-        
-        for line in lines:
-            line = line.strip()
-            if not line:
-                story.append(Spacer(1, 6))
-                continue
-            
-            # Add the line as a justified paragraph
+
+        lower = line.lower()
+
+        # Section header (NO decorative dashes)
+        if any(lower.startswith(kw) or kw in lower[:40] for kw in section_keywords):
+            story.append(Spacer(1, 8))
+            story.append(Paragraph(line, section_header_style))
+            story.append(Spacer(1, 6))
+
+        # Our artificial subsection tag from formatter
+        elif line.startswith("[SUBSECTION] "):
+            clean = line.replace("[SUBSECTION]", "").strip()
+            story.append(Paragraph(clean, subsection_style))
+            story.append(Spacer(1, 4))
+
+        # Bullets
+        elif line.startswith("•") or line.startswith("  •"):
+            clean_line = line.lstrip(" •").strip()
+            story.append(Paragraph(f"• {clean_line}", bullet_style))
+            story.append(Spacer(1, 2))
+
+        # Marked sources
+        elif line.startswith("[SOURCE] ") or line.strip().startswith("    [SOURCE]"):
+            clean = line.replace("[SOURCE]", "").strip()
+            story.append(Paragraph(clean, source_style))
+            story.append(Spacer(1, 2))
+
+        # "END OF ..." - clean, NO decorative nnnnn or dashes
+        elif line.startswith("END OF"):
+            story.append(Spacer(1, 20))
+            story.append(Paragraph(line, end_marker_style))
+
+        # Regular body text
+        else:
             story.append(Paragraph(line, body_style))
+            story.append(Spacer(1, 4))
 
-    # Add footer
-    story.append(Paragraph("End of Engineering Analysis Report", footer_style))
+    # Build
+    doc.build(story, canvasmaker=HeaderFooterCanvas)
+    print(f"✓ Professional PDF report created successfully: {pdf_file}")
+    return pdf_file
 
-    # Build the PDF with page numbering
-    doc.build(story, canvasmaker=PageNumberCanvas)
-    print(f"PDF created successfully: {output_file}")
 
+def convert_txt_to_pdf(input_file, output_file):
+    """Convert text file to beautifully formatted PDF report."""
+    try:
+        with open(input_file, "r", encoding="utf-8") as file:
+            content = file.read()
+        create_styled_document(content, output_file)
+    except Exception as e:
+        print(f"Error in convert_txt_to_pdf: {str(e)}")
+        raise
 
 
 def text_to_pdf(text_content: str, pdf_file: str):
-    """Convert raw text content directly into a styled PDF file with bold subheadings and status labels."""
-
-    styles = getSampleStyleSheet()
-    
-    # Normal style
-    normal_style = ParagraphStyle(
-        'CustomNormal',
-        parent=styles['Normal'],
-        fontName='Times-Roman',
-        fontSize=11,
-        leading=14,
-        spaceAfter=10
-    )
-
-    # Bold style for subheadings and status
-    bold_style = ParagraphStyle(
-        'BoldStyle',
-        parent=styles['Normal'],
-        fontName='Times-Bold',
-        fontSize=11,
-        leading=14,
-        spaceAfter=10,
-        textColor=colors.black
-    )
-
-    # Title style
-    title_style = ParagraphStyle(
-        'TitleStyle',
-        parent=styles['Title'],
-        fontName='Times-Bold',
-        fontSize=16,
-        spaceAfter=20,
-        textColor=colors.black
-    )
-
-    # Create PDF
-    doc = SimpleDocTemplate(
-        pdf_file, 
-        pagesize=A4, 
-        rightMargin=40, 
-        leftMargin=40, 
-        topMargin=50, 
-        bottomMargin=40
-    )
-    story = []
-
-    # Add Title
-    story.append(Paragraph("Engineering Specification Report", title_style))
-    story.append(Spacer(1, 12))
-
-    # Keywords for subheadings or competency
-    bold_keywords = [
-        "Section 1",
-        "Section 2", 
-        "Section 3",
-    ]
-
-    # Add text content line by line
-    for line in text_content.split("\n"):
-        if line.strip():
-            # Check if line is a subheading or competency result
-            if any(line.strip().startswith(keyword) for keyword in bold_keywords):
-                story.append(Paragraph(line.strip(), bold_style))
-            else:
-                story.append(Paragraph(line.strip(), normal_style))
-        else:
-            story.append(Spacer(1, 6))
-
-    doc.build(story)
-    print(f" PDF saved to: {pdf_file}")
-
-# if __name__ == "__main__":
-#     # Test the original convert_txt_to_pdf function
-#     input_file = "New_First_Draft_7.txt"
-#     output_file = "New_First_Draft_7.pdf"
-    
-#     try:
-#         convert_txt_to_pdf(input_file, output_file)
-#     except Exception as e:
-#         print(f"An error occurred in convert_txt_to_pdf: {str(e)}")
-    
-    # Test the new text_to_pdf function with sample content
-#     sample_text = """Section 1: System Requirements
-# This section outlines the technical specifications for the plant automation system.
-# All components must meet industry standards.
-
-# Section 2: Implementation Plan
-# The system will be deployed in three phases.
-# Each phase requires thorough testing.
-
-# Section 3: Maintenance Protocol
-# Regular maintenance schedules must be followed.
-# All personnel must be trained on safety procedures.
-
-# Knowledge evidence: Technical documentation completed.
-# Performance evidence: All tests passed successfully.
-
-# COMPETENT: System meets all requirements.
-# FINAL GRADE: APPROVED"""
-    
-#     try:
-#         text_to_pdf(sample_text, "engineering_specification_report.pdf")
-#     except Exception as e:
-#         print(f"An error occurred in text_to_pdf: {str(e)}")
+    """Convert raw text content directly to a beautifully formatted PDF report."""
+    try:
+        create_styled_document(text_content, pdf_file)
+    except Exception as e:
+        print(f"Error in text_to_pdf: {str(e)}")
+        raise
